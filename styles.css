@@ -58,3 +58,45 @@ footer {
   color: white;
   padding: 10px;
 }
+/* Representative Info */
+#rep-info {
+  text-align: left;
+  margin-top: 20px;
+  padding: 15px;
+  background: var(--card-background);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+}
+
+.rep-card {
+  margin-bottom: 15px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #f9f9f9;
+  text-align: left;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.rep-card div {
+  margin-bottom: 8px; /* Add small spacing between sections */
+}
+
+.rep-card div span:first-child {
+  font-weight: bold; /* Bold the field names (e.g., Name, Phone, Email) */
+  margin-right: 10px; /* Add space after the label */
+}
+
+.rep-card div span:last-child {
+  display: inline-block;
+  font-size: 16px;
+}
+
+.rep-card div a {
+  color: #6a11cb;
+  text-decoration: none;
+}
+
+.rep-card div a:hover {
+  text-decoration: underline;
+}
