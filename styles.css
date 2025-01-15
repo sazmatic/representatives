@@ -48,29 +48,52 @@ main {
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-select {
-  width: 90%; /* Increase width to make it prominent */
+/* Dropdown Wrapper */
+.dropdown-wrapper {
+  position: relative;
+  width: 90%;
   max-width: 500px;
-  padding: 20px; /* Increased padding for touch-friendly interaction */
-  font-size: 18px; /* Larger font size */
-  border: 2px solid var(--border-color);
-  border-radius: 10px;
-  margin: 20px 0;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  appearance: none;
-  background-color: #ffffff;
-  color: var(--neutral-color);
-  font-weight: bold; /* Makes text stand out */
+  margin: 20px auto;
 }
 
-select:hover {
-  border-color: var(--link-color);
+/* Select Dropdown */
+select {
+  width: 100%;
+  padding: 20px;
+  font-size: 18px;
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  background-color: #ffffff;
+  color: var(--neutral-color);
+  font-weight: bold;
+  appearance: none;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 select:focus {
   outline: none;
-  border-color: #0056B3;
-  box-shadow: 0px 0px 10px rgba(0, 86, 179, 0.5);
+  border-color: #007BFF;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Floating Label */
+.floating-label {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: var(--neutral-color);
+  pointer-events: none; /* Prevents label from being clickable */
+  transition: all 0.2s ease-in-out;
+}
+
+select:focus + .floating-label,
+select:not(:placeholder-shown) + .floating-label {
+  top: -10px;
+  left: 15px;
+  font-size: 14px;
+  color: var(--link-color);
 }
 
 /* Campus Name */
@@ -130,7 +153,7 @@ footer {
 
   main {
     padding: 15px;
-    height: 80vh; /* Slightly more space for dropdown */
+    height: 80vh;
   }
 
   select {
