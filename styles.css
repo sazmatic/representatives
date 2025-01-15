@@ -1,11 +1,12 @@
 /* CSS Variables for Styling */
 :root {
-  --primary-gradient: linear-gradient(90deg, #6a11cb, #2575fc); /* Header Gradient */
-  --secondary-color: #0056b3; /* Footer Background */
+  --primary-gradient: linear-gradient(90deg, #007BFF, #0056B3); /* Header Gradient */
+  --secondary-color: #0056B3; /* Footer Background */
   --neutral-color: #333; /* Neutral Text */
   --background-color: #f5f5f5; /* Page Background */
   --card-background: #ffffff; /* Card Background */
   --border-color: #ddd; /* Light Border */
+  --link-color: #007BFF; /* Blue for Links */
 }
 
 /* General Styles */
@@ -19,11 +20,11 @@ body {
 }
 
 header {
-  background: linear-gradient(90deg, #007BFF, #0056B3); /* Blue gradient */
+  background: var(--primary-gradient);
   color: white;
   padding: 20px 0;
   text-align: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
@@ -56,19 +57,19 @@ select {
 }
 
 select:hover {
-  border-color: #6a11cb;
+  border-color: var(--link-color);
 }
 
 select:focus {
   outline: none;
-  border-color: #2575fc;
-  box-shadow: 0px 0px 5px rgba(37, 117, 252, 0.5);
+  border-color: #0056B3;
+  box-shadow: 0px 0px 5px rgba(0, 86, 179, 0.5);
 }
 
 /* Campus Name */
 h2 {
   font-size: 22px;
-  color: #6a11cb;
+  color: var(--link-color); /* Updated to blue */
   margin-bottom: 20px;
 }
 
@@ -82,7 +83,7 @@ h2 {
   padding: 15px;
   border: 1px solid var(--border-color);
   border-radius: 8px;
-  background: #f9f9f9;
+  background: var(--card-background);
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -96,7 +97,7 @@ h2 {
 }
 
 .rep-card div a {
-  color: #6a11cb;
+  color: var(--link-color); /* Updated to blue */
   text-decoration: none;
 }
 
