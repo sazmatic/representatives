@@ -8,36 +8,40 @@ document.getElementById('campus-select').addEventListener('change', function () 
   // Define representatives for each campus
   const representatives = {
     "Royal Oak": [
-      { name: "John Doe", phone: "555-123-4567", email: "johndoe@example.com" },
-      { name: "Mary Jane", phone: "555-987-6543", email: "maryjane@example.com" }
+      { name: "Sarah Johnson", phone: "586-604-4432", email: "sarah.johnson7170@gmail.com" },
+      { name: "Lori Greenlee", phone: "586-651-1266", email: "lagreenlee71@gmail.com" },
+      { name: "Sargon Mikho", phone: "586-567-1995", email: "s.mikho@icloud.com" }
     ],
     "Troy": [
-      { name: "Jane Smith", phone: "555-234-5678", email: "janesmith@example.com" },
-      { name: "Robert Brown", phone: "555-345-6789", email: "robertbrown@example.com" }
+      { name: "Katherine Wallace", phone: "248-404-8084", email: "gr8chi@aol.com" },
+      { name: "Suzi Carbone", phone: "586-944-4520", email: "spcarbone3@gmail.com" },
+      { name: "Shawn Hills", phone: "586-439-8799", email: "hillisshawn01@gmail.com" },
+      { name: "Marley Shook, NP", phone: "586-567-3122", email: "Marleyshook313@gmail.com" }
     ],
     "Dearborn": [
-      { name: "Ahmed Khan", phone: "555-345-6789", email: "ahmedkhan@example.com" },
-      { name: "Fatima Ali", phone: "555-654-9876", email: "fatimaali@example.com" }
+      { name: "Becky Smola", phone: "734-693-3076", email: "rebeccasmola1984@gmail.com" },
+      { name: "Michella Vincent", phone: "313-585-1858", email: "michella.vincent@yahoo.com" }
     ],
     "Farmington Hills": [
-      { name: "Emily Davis", phone: "555-456-7890", email: "emilydavis@example.com" },
-      { name: "Steve Grant", phone: "555-765-4321", email: "stevegrant@example.com" }
+      { name: "Misty Croteau", phone: "734-658-0815", email: "mcroteau84@gmail.com" },
+      { name: "Debbie Miracle", phone: "313-333-3296", email: "miraclefour@sbcglobal.net" }
     ],
     "Wayne": [
-      { name: "Michael Brown", phone: "555-567-8901", email: "michaelbrown@example.com" },
-      { name: "Lisa White", phone: "555-123-7890", email: "lisawhite@example.com" }
+      { name: "Natalie Lunsford", phone: "734-250-4073", email: "natrn91@wowway.com" },
     ],
     "Southfield": [
-      { name: "Sarah Wilson", phone: "555-678-9012", email: "sarahwilson@example.com" },
-      { name: "Paul Adams", phone: "555-890-1234", email: "pauladams@example.com" }
+      { name: "Meredith Corseti", phone: "248-376-7712", email: "millermeredith@hotmail.com" },
+      { name: "Katie Wilson (Flex RN)", phone: "313-400-6424", email: "kwilso65@emich.edu" }
     ],
     "Taylor": [
-      { name: "Chris Johnson", phone: "555-789-0123", email: "chrisjohnson@example.com" },
-      { name: "Nina Bell", phone: "555-987-6543", email: "ninabell@example.com" }
+      { name: "Kimberly Pavlich", phone: "313-590-5276", email: "kimberly.ann15@ymail.com" },
+      { name: "Allison Lorentz", phone: "734-718-5366", email: "jrsice1@gmail.com" }
     ],
     "Trenton": [
-      { name: "Anna Lee", phone: "555-890-1234", email: "annalee@example.com" },
-      { name: "Kevin Hart", phone: "555-456-7890", email: "kevinhart@example.com" }
+      { name: "Keli Wludyka", phone: "313-268-7768", email: "Kwludyka@wowway.com" },
+      { name: "Kerri Donovan", phone: "734-925-1162", email: "Kerridonovan5@gmail.com" },
+      { name: "Cari York", phone: "313-300-3523", email: "Dougcupcake@sbcglobal.net" },
+      { name: "Deb Lyles", phone: "313-549-7249", email: "Deblyles21@yahoo.com" }
     ]
   };
 
