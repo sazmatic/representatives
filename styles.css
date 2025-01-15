@@ -48,29 +48,53 @@ main {
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-select {
-  width: 90%; /* Increase width to make it prominent */
+/* Dropdown Wrapper */
+.dropdown-wrapper {
+  position: relative;
+  width: 90%;
   max-width: 500px;
-  padding: 20px; /* Increased padding for touch-friendly interaction */
-  font-size: 18px; /* Larger font size */
-  border: 2px solid var(--border-color);
-  border-radius: 10px;
-  margin: 20px 0;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  appearance: none;
-  background-color: #ffffff;
-  color: var(--neutral-color);
-  font-weight: bold; /* Makes text stand out */
+  margin: 20px auto;
 }
 
-select:hover {
-  border-color: var(--link-color);
+/* Select Dropdown */
+select {
+  width: 100%;
+  padding: 15px 20px;
+  font-size: 18px;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  background: white;
+  appearance: none;
+  color: #333;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 select:focus {
   outline: none;
-  border-color: #0056B3;
-  box-shadow: 0px 0px 10px rgba(0, 86, 179, 0.5);
+  border-color: #007BFF;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Floating Label */
+.floating-label {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #666;
+  background: var(--background-color); /* Prevent overlap by matching the page background */
+  padding: 0 5px; /* Padding for spacing around the label */
+  pointer-events: none; /* Prevent the label from being clicked */
+  transition: all 0.3s ease-in-out;
+}
+
+select:focus + .floating-label,
+select:not([value=""]) + .floating-label {
+  top: -12px; /* Move above the dropdown */
+  left: 15px; /* Slightly adjust to the left */
+  font-size: 14px; /* Shrink font size */
+  color: var(--link-color); /* Highlight the label */
 }
 
 /* Campus Name */
@@ -135,7 +159,7 @@ footer {
 
   select {
     font-size: 16px; /* Slightly smaller for small screens */
-    padding: 18px;
+    padding: 12px 15px;
   }
 
   h2 {
