@@ -169,3 +169,21 @@ footer {
     padding: 10px;
   }
 }
+/* Center text in the dropdown */
+select {
+  text-align: center; /* Centers the text horizontally */
+  text-align-last: center; /* Ensures the selected text stays centered */
+}
+
+/* Styling for the placeholder */
+select:invalid {
+  color: #aaa; /* Light gray for placeholder */
+  text-align: center; /* Center placeholder */
+  text-align-last: center; /* Center selected text */
+}
+
+/* Ensure other options are also centered */
+select option {
+  text-align: center; /* Center text in all options */
+  color: #333; /* Default text color for other options */
+}
