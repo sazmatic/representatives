@@ -16,26 +16,36 @@ label {
   font-size: 18px;
 }
 select {
-  padding: 15px; /* Increases the padding inside the dropdown */
-  margin: 10px; /* Adds space around the dropdown */
-  font-size: 18px; /* Makes the text larger */
-  width: 60%; /* Makes the dropdown wider */
-  max-width: 500px; /* Ensures it doesn't get too wide on larger screens */
-  border: 2px solid #ccc; /* Adds a thicker border for emphasis */
-  border-radius: 8px; /* Adds rounded corners */
-  background-color: #f4f4f9; /* Adds a light background color */
+  appearance: none; /* Removes default dropdown arrow */
+  -webkit-appearance: none; /* Safari compatibility */
+  -moz-appearance: none; /* Firefox compatibility */
+  padding: 15px 20px; /* Adds generous padding */
+  margin: 15px auto; /* Centers the dropdown */
+  font-size: 20px; /* Makes the text larger */
+  font-weight: 500; /* Slightly bold text */
+  width: 70%; /* Makes it wider */
+  max-width: 600px; /* Caps the maximum width */
+  border: 2px solid #ccc; /* Defines a subtle border */
+  border-radius: 10px; /* Adds smooth rounded corners */
+  background-color: #ffffff; /* White background */
+  background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"%3E%3Cpath fill="%23333" d="M2 0L0 2h4zM2 5L0 3h4z"/%3E%3C/svg%3E');
+  background-repeat: no-repeat;
+  background-position: right 15px center; /* Positions custom arrow */
+  background-size: 10px; /* Scales the arrow */
   color: #333; /* Text color */
-  outline: none; /* Removes the default blue outline on focus */
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+  text-align: left; /* Aligns text to the left */
+  cursor: pointer; /* Changes cursor to a pointer on hover */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Adds a soft shadow */
 }
 
 select:hover {
-  border-color: #007BFF; /* Changes the border color on hover */
+  border-color: #007BFF; /* Changes border color on hover */
 }
 
 select:focus {
-  border-color: #0056b3; /* Highlights the border when focused */
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Adds a glow effect */
+  outline: none; /* Removes default outline */
+  border-color: #0056b3; /* Highlights border when focused */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Adds focus glow */
 }
 
 #campus-name {
