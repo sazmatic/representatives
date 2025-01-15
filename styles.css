@@ -1,14 +1,12 @@
-/* CSS Variables for Modern Theme */
+/* CSS Variables for a Simple Theme */
 :root {
-  --primary-color: #4A90E2; /* Soft blue */
-  --secondary-color: #50E3C2; /* Mint green */
-  --neutral-color: #4A4A4A; /* Dark grey for text */
-  --background-color: #F5F7FA; /* Light grey for background */
-  --card-background: #FFFFFF; /* White for cards */
-  --border-color: #E6E9EF; /* Light border color */
-  --shadow-color: rgba(0, 0, 0, 0.05); /* Soft shadow */
-  --hover-shadow-color: rgba(0, 0, 0, 0.15); /* Hover shadow */
-  --font-family: 'Roboto', sans-serif; /* Modern font */
+  --primary-color: #007BFF; /* Blue */
+  --secondary-color: #0056b3; /* Darker blue */
+  --neutral-color: #333; /* Neutral text color */
+  --background-color: #f9f9f9; /* Light background */
+  --card-background: #ffffff; /* White for cards */
+  --border-color: #ddd; /* Light border color */
+  --font-family: 'Arial', sans-serif; /* Clean font */
 }
 
 /* General Styles */
@@ -18,39 +16,37 @@ body {
   padding: 0;
   background-color: var(--background-color);
   color: var(--neutral-color);
-  line-height: 1.6;
+  text-align: center;
 }
 
 /* Header */
 header {
-  padding: 20px;
-  background: var(--primary-color);
-  color: white;
-  text-align: center;
-  box-shadow: 0 4px 6px var(--shadow-color);
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 20px 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
-  font-size: 24px;
-  font-weight: 700;
   margin: 0;
+  font-size: 24px;
+  font-weight: bold;
 }
 
 /* Main Content */
 main {
-  max-width: 800px;
-  margin: 30px auto;
+  margin: 20px auto;
   padding: 20px;
-  text-align: center;
-  background-color: var(--card-background);
-  border-radius: 12px;
-  box-shadow: 0px 4px 6px var(--shadow-color);
+  max-width: 600px;
+  background: var(--card-background);
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Labels */
 label {
   display: block;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   font-size: 16px;
   font-weight: bold;
   color: var(--neutral-color);
@@ -59,104 +55,85 @@ label {
 /* Dropdown */
 select {
   width: 100%;
-  max-width: 400px;
-  padding: 15px;
+  padding: 12px;
   font-size: 16px;
-  font-family: var(--font-family);
   border: 1px solid var(--border-color);
-  border-radius: 8px;
-  background: var(--card-background);
+  border-radius: 6px;
+  background: #fff;
   color: var(--neutral-color);
-  box-shadow: 0px 4px 6px var(--shadow-color);
-  appearance: none;
-  cursor: pointer;
-  transition: box-shadow 0.3s, border-color 0.3s;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 select:hover {
-  box-shadow: 0px 4px 8px var(--hover-shadow-color);
-  border-color: var(--secondary-color);
+  border-color: var(--primary-color);
 }
 
 select:focus {
   outline: none;
-  box-shadow: 0 0 5px var(--secondary-color);
   border-color: var(--secondary-color);
 }
 
 /* Campus Name */
 h2 {
   font-size: 20px;
-  font-weight: bold;
   color: var(--primary-color);
   margin: 20px 0;
 }
 
-/* Representative Information */
+/* Representative Info */
 #rep-info {
   text-align: left;
   margin-top: 20px;
-  padding: 20px;
+  padding: 15px;
   background: var(--card-background);
-  border-radius: 12px;
-  box-shadow: 0px 4px 6px var(--shadow-color);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
 }
 
 .rep-card {
-  padding: 15px;
   margin-bottom: 15px;
-  background: #FAFAFA;
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
-  box-shadow: 0px 2px 4px var(--shadow-color);
-  transition: transform 0.2s, box-shadow 0.2s;
+  padding: 10px;
+  border-bottom: 1px solid var(--border-color);
 }
 
-.rep-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0px 4px 8px var(--hover-shadow-color);
+.rep-card:last-child {
+  border-bottom: none;
 }
 
 .rep-card strong {
   display: block;
-  font-size: 16px;
   margin-bottom: 5px;
+  font-size: 14px;
 }
 
+/* Links */
 a {
   color: var(--primary-color);
   text-decoration: none;
-  font-weight: bold;
-  transition: color 0.2s;
 }
 
 a:hover {
-  color: var(--secondary-color);
+  text-decoration: underline;
 }
 
 /* Footer */
 footer {
-  padding: 15px;
-  background-color: var(--primary-color);
-  color: white;
-  text-align: center;
-  font-size: 14px;
   margin-top: 30px;
+  padding: 10px;
+  background-color: var(--secondary-color);
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
 }
 
-/* Responsive Design */
+/* Responsive Adjustments */
 @media (max-width: 768px) {
-  main {
-    padding: 15px;
+  header h1 {
+    font-size: 20px;
   }
 
   select {
     font-size: 14px;
-    padding: 12px;
-  }
-
-  h1 {
-    font-size: 20px;
   }
 
   h2 {
