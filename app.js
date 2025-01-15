@@ -11,8 +11,36 @@ const representatives = {
     { name: "Suzi Carbone", phone: "5869444520", email: "spcarbone3@gmail.com" },
     { name: "Shawn Hills", phone: "5864398799", email: "hillisshawn01@gmail.com" },
     { name: "Marley Shook, NP", phone: "5865673122", email: "Marleyshook313@gmail.com" }
+  ],
+  "Dearborn": [
+    { name: "Becky Smola", phone: "7346933076", email: "rebeccasmola1984@gmail.com" },
+    { name: "Michella Vincent", phone: "3135851858", email: "michella.vincent@yahoo.com" }
+  ],
+  "Farmington Hills": [
+    { name: "Misty Croteau", phone: "7346580815", email: "mcroteau84@gmail.com" },
+    { name: "Debbie Miracle", phone: "3133333296", email: "miraclefour@sbcglobal.net" }
+  ],
+  "Grosse Pointe": [
+    { name: "Holly Kowal", phone: "3134182405", email: "lonemirage02@gmail.com" },
+    { name: "Jody Woodley", phone: "5862128398", email: "jlynnwoodley@yahoo.com" }
+  ],
+  "Wayne": [
+    { name: "Natalie Lunsford", phone: "7342504073", email: "natrn91@wowway.com" }
+  ],
+  "Southfield": [
+    { name: "Meredith Corseti", phone: "2483767712", email: "millermeredith@hotmail.com" },
+    { name: "Katie Wilson (Flex RN)", phone: "3134006424", email: "kwilso65@emich.edu" }
+  ],
+  "Taylor": [
+    { name: "Kimberly Pavlich", phone: "3135905276", email: "kimberly.ann15@ymail.com" },
+    { name: "Allison Lorentz", phone: "7347185366", email: "jrsice1@gmail.com" }
+  ],
+  "Trenton": [
+    { name: "Keli Wludyka", phone: "3132687768", email: "Kwludyka@wowway.com" },
+    { name: "Kerri Donovan", phone: "7349251162", email: "Kerridonovan5@gmail.com" },
+    { name: "Cari York", phone: "3133003523", email: "Dougcupcake@sbcglobal.net" },
+    { name: "Deb Lyles", phone: "3135497249", email: "Deblyles21@yahoo.com" }
   ]
-  // Add more campuses here
 };
 
 function handleCampusChange() {
