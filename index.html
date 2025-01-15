@@ -13,9 +13,8 @@
 
   <main>
     <!-- Dropdown Menu -->
-    <label for="campus-select">Select your campus:</label>
-    <select id="campus-select" aria-label="Campus Selector">
-      <option value="">--Select Campus--</option>
+    <select id="campus-select" aria-label="Campus Selector" required>
+      <option value="" disabled selected>--Select Campus--</option>
       <option value="Royal Oak">Royal Oak</option>
       <option value="Troy">Troy</option>
       <option value="Dearborn">Dearborn</option>
@@ -26,6 +25,7 @@
       <option value="Taylor">Taylor</option>
       <option value="Trenton">Trenton</option>
     </select>
+    <label for="campus-select">Select Your Campus</label>
 
     <!-- Dynamic Campus Name -->
     <h2 id="campus-name" style="display: none;"></h2>
@@ -37,7 +37,7 @@
   </main>
 
   <footer>
-    <p>&copy; 2025 Teamsters Local 2024. All rights reserved</p>
+    <p>&copy; 2025 Teamsters Local 2024</p>
   </footer>
 
   <script src="app.js"></script>
