@@ -48,24 +48,23 @@ main {
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Dropdown Wrapper */
-.dropdown-wrapper {
-  position: relative;
-  width: 100%;
-  max-width: 500px;
-  margin: 20px auto;
-}
-
 select {
-  width: 100%;
-  padding: 20px;
-  font-size: 18px;
+  width: 90%; /* Increase width to make it prominent */
+  max-width: 500px;
+  padding: 20px; /* Increased padding for touch-friendly interaction */
+  font-size: 18px; /* Larger font size */
   border: 2px solid var(--border-color);
   border-radius: 10px;
+  margin: 20px 0;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  appearance: none;
   background-color: #ffffff;
   color: var(--neutral-color);
-  font-weight: bold;
-  appearance: none;
+  font-weight: bold; /* Makes text stand out */
+}
+
+select:hover {
+  border-color: var(--link-color);
 }
 
 select:focus {
@@ -74,30 +73,43 @@ select:focus {
   box-shadow: 0px 0px 10px rgba(0, 86, 179, 0.5);
 }
 
-/* Floating Label */
-.floating-label {
-  position: absolute;
-  left: 20px;
-  top: 20px;
-  font-size: 18px;
-  color: var(--link-color);
-  pointer-events: none; /* Prevents label from being clicked */
-  transition: all 0.3s ease;
-}
-
-select:focus + .floating-label,
-select:not(:placeholder-shown) + .floating-label {
-  top: -10px;
-  left: 15px;
-  font-size: 14px;
-  color: var(--neutral-color);
-}
-
 /* Campus Name */
 h2 {
   font-size: 22px;
   color: var(--link-color); /* Blue */
   margin-bottom: 20px;
+}
+
+/* Representative Cards */
+#rep-info {
+  text-align: left;
+}
+
+.rep-card {
+  margin: 15px 0;
+  padding: 15px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--card-background);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.rep-card div {
+  margin-bottom: 10px;
+}
+
+.rep-card div span:first-child {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.rep-card div a {
+  color: var(--link-color); /* Blue */
+  text-decoration: none;
+}
+
+.rep-card div a:hover {
+  text-decoration: underline;
 }
 
 /* Footer */
@@ -118,15 +130,24 @@ footer {
 
   main {
     padding: 15px;
-    height: 80vh;
+    height: 80vh; /* Slightly more space for dropdown */
   }
 
   select {
-    font-size: 16px;
+    font-size: 16px; /* Slightly smaller for small screens */
     padding: 18px;
   }
 
   h2 {
     font-size: 18px;
+  }
+
+  .rep-card {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .rep-card div span:first-child {
+    margin-right: 5px;
   }
 }
