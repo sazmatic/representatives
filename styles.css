@@ -145,14 +145,16 @@ h2 {
   border-radius: 8px;
   background: var(--card-background);
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  line-height: 1.8; /* Increase line height for better spacing */
 }
 
 .rep-card div {
-  margin-bottom: 10px;
+  margin-bottom: 10px; /* Add spacing between each item */
 }
 
 .rep-card div span:first-child {
   font-weight: bold;
+  margin-right: 5px;
 }
 
 .rep-card div a {
