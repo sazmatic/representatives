@@ -15,11 +15,27 @@ label {
   margin: 20px 0 10px;
   font-size: 18px;
 }
-
 select {
-  padding: 10px;
-  margin: 10px;
-  font-size: 16px;
+  padding: 15px; /* Increases the padding inside the dropdown */
+  margin: 10px; /* Adds space around the dropdown */
+  font-size: 18px; /* Makes the text larger */
+  width: 60%; /* Makes the dropdown wider */
+  max-width: 500px; /* Ensures it doesn't get too wide on larger screens */
+  border: 2px solid #ccc; /* Adds a thicker border for emphasis */
+  border-radius: 8px; /* Adds rounded corners */
+  background-color: #f4f4f9; /* Adds a light background color */
+  color: #333; /* Text color */
+  outline: none; /* Removes the default blue outline on focus */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+}
+
+select:hover {
+  border-color: #007BFF; /* Changes the border color on hover */
+}
+
+select:focus {
+  border-color: #0056b3; /* Highlights the border when focused */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Adds a glow effect */
 }
 
 #campus-name {
