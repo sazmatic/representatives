@@ -1,101 +1,165 @@
-/* General Styles */
-body {
-  font-family: 'Arial', sans-serif;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-  background-color: #f4f4f9;
-  color: #333;
+/* CSS Variables for Modern Theme */
+:root {
+  --primary-color: #4A90E2; /* Soft blue */
+  --secondary-color: #50E3C2; /* Mint green */
+  --neutral-color: #4A4A4A; /* Dark grey for text */
+  --background-color: #F5F7FA; /* Light grey for background */
+  --card-background: #FFFFFF; /* White for cards */
+  --border-color: #E6E9EF; /* Light border color */
+  --shadow-color: rgba(0, 0, 0, 0.05); /* Soft shadow */
+  --hover-shadow-color: rgba(0, 0, 0, 0.15); /* Hover shadow */
+  --font-family: 'Roboto', sans-serif; /* Modern font */
 }
 
-/* Header Styles */
+/* General Styles */
+body {
+  font-family: var(--font-family);
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  color: var(--neutral-color);
+  line-height: 1.6;
+}
+
+/* Header */
 header {
-  padding: 20px 0;
-  background-color: #0056b3;
-  color: #ffffff;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  background: var(--primary-color);
+  color: white;
+  text-align: center;
+  box-shadow: 0 4px 6px var(--shadow-color);
 }
 
 header h1 {
-  font-size: 28px;
-  margin: 10px 0;
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
 }
 
-/* Dropdown Label */
+/* Main Content */
+main {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 20px;
+  text-align: center;
+  background-color: var(--card-background);
+  border-radius: 12px;
+  box-shadow: 0px 4px 6px var(--shadow-color);
+}
+
+/* Labels */
 label {
   display: block;
-  margin: 20px 0 10px;
-  font-size: 18px;
+  margin-bottom: 15px;
+  font-size: 16px;
   font-weight: bold;
-  color: #333;
+  color: var(--neutral-color);
 }
 
-/* Dropdown Menu */
+/* Dropdown */
 select {
-  appearance: none;
-  padding: 15px 20px;
+  width: 100%;
+  max-width: 400px;
+  padding: 15px;
   font-size: 16px;
-  width: 80%;
-  max-width: 500px;
-  border: 2px solid #ccc;
+  font-family: var(--font-family);
+  border: 1px solid var(--border-color);
   border-radius: 8px;
-  background-color: #ffffff;
-  background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"%3E%3Cpath fill="%23333" d="M2 0L0 2h4zM2 5L0 3h4z"/%3E%3C/svg%3E');
-  background-repeat: no-repeat;
-  background-position: right 15px center;
-  background-size: 10px;
-  color: #333;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  background: var(--card-background);
+  color: var(--neutral-color);
+  box-shadow: 0px 4px 6px var(--shadow-color);
+  appearance: none;
+  cursor: pointer;
+  transition: box-shadow 0.3s, border-color 0.3s;
 }
 
 select:hover {
-  border-color: #007BFF;
+  box-shadow: 0px 4px 8px var(--hover-shadow-color);
+  border-color: var(--secondary-color);
 }
 
 select:focus {
   outline: none;
-  border-color: #0056b3;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  box-shadow: 0 0 5px var(--secondary-color);
+  border-color: var(--secondary-color);
 }
 
-/* Dynamic Campus Name */
+/* Campus Name */
 h2 {
-  font-size: 24px;
-  font-weight: 600;
-  color: #007BFF;
-  margin: 30px 0 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin: 20px 0;
 }
 
-/* Representative Info Box */
+/* Representative Information */
 #rep-info {
-  margin: 20px auto;
-  padding: 20px;
-  max-width: 600px;
-  border: 2px solid #ccc;
-  border-radius: 10px;
-  background-color: #ffffff;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   text-align: left;
+  margin-top: 20px;
+  padding: 20px;
+  background: var(--card-background);
+  border-radius: 12px;
+  box-shadow: 0px 4px 6px var(--shadow-color);
 }
 
-#rep-info .rep-card {
+.rep-card {
+  padding: 15px;
   margin-bottom: 15px;
-  padding: 10px;
+  background: #FAFAFA;
+  border: 1px solid var(--border-color);
   border-radius: 8px;
-  background-color: #f9f9f9;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 2px 4px var(--shadow-color);
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
-#rep-info .rep-card:hover {
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+.rep-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 4px 8px var(--hover-shadow-color);
+}
+
+.rep-card strong {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--secondary-color);
 }
 
 /* Footer */
 footer {
-  margin-top: 40px;
-  padding: 10px;
-  background-color: #0056b3;
-  color: #ffffff;
-  font-size: 14px;
+  padding: 15px;
+  background-color: var(--primary-color);
+  color: white;
   text-align: center;
+  font-size: 14px;
+  margin-top: 30px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  main {
+    padding: 15px;
+  }
+
+  select {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
 }
