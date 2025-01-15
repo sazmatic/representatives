@@ -81,12 +81,12 @@ select:focus {
   top: 20px;
   font-size: 18px;
   color: var(--link-color);
-  pointer-events: none; /* Makes label unclickable */
-  transition: all 0.3s ease-in-out;
+  pointer-events: none; /* Prevents label from being clicked */
+  transition: all 0.3s ease;
 }
 
 select:focus + .floating-label,
-select:not([value=""]) + .floating-label {
+select:not(:placeholder-shown) + .floating-label {
   top: -10px;
   left: 15px;
   font-size: 14px;
