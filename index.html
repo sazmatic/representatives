@@ -1,153 +1,47 @@
-/* CSS Variables for Styling */
-:root {
-  --primary-gradient: linear-gradient(90deg, #007BFF, #0056B3); /* Header Gradient */
-  --secondary-color: #0056B3; /* Footer Background */
-  --neutral-color: #333; /* Neutral Text */
-  --background-color: #f5f5f5; /* Page Background */
-  --card-background: #ffffff; /* Card Background */
-  --border-color: #ddd; /* Light Border */
-  --link-color: #007BFF; /* Blue for Links */
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Find Your Representative</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Find Your Campus Representative</h1>
+  </header>
 
-/* General Styles */
-body {
-  font-family: Arial, sans-serif;
-  background: var(--background-color);
-  color: var(--neutral-color);
-  margin: 0;
-  padding: 0;
-  text-align: center;
-}
+  <main>
+    <!-- Dropdown Menu with Animated Label -->
+    <div class="dropdown-wrapper">
+      <label for="campus-select" class="floating-label">Select Your Campus</label>
+      <select id="campus-select" aria-label="Campus Selector">
+        <option value="" disabled selected>--Select Campus--</option>
+        <option value="Royal Oak">Royal Oak</option>
+        <option value="Troy">Troy</option>
+        <option value="Dearborn">Dearborn</option>
+        <option value="Farmington Hills">Farmington Hills</option>
+        <option value="Grosse Pointe">Grosse Pointe</option>
+        <option value="Wayne">Wayne</option>
+        <option value="Southfield">Southfield</option>
+        <option value="Taylor">Taylor</option>
+        <option value="Trenton">Trenton</option>
+      </select>
+    </div>
 
-header {
-  background: var(--primary-gradient);
-  color: white;
-  padding: 20px 0;
-  text-align: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
+    <!-- Dynamic Campus Name -->
+    <h2 id="campus-name" style="display: none;"></h2>
 
-header h1 {
-  font-size: 26px;
-  margin: 0;
-  font-weight: bold;
-}
+    <!-- Representative Information -->
+    <div id="rep-info" style="display: none;">
+      <div id="rep-name"></div>
+    </div>
+  </main>
 
-/* Main Content */
-main {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 70vh; /* Takes most of the viewport height */
-  margin: 0 auto;
-  max-width: 600px;
-  background: var(--card-background);
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-}
+  <footer>
+    <p>&copy; 2025 Teamsters Local 2024</p>
+  </footer>
 
-select {
-  width: 90%; /* Increase width to make it prominent */
-  max-width: 500px;
-  padding: 20px; /* Increased padding for touch-friendly interaction */
-  font-size: 18px; /* Larger font size */
-  border: 2px solid var(--border-color);
-  border-radius: 10px;
-  margin: 20px 0;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  appearance: none;
-  background-color: #ffffff;
-  color: var(--neutral-color);
-  font-weight: bold; /* Makes text stand out */
-}
-
-select:hover {
-  border-color: var(--link-color);
-}
-
-select:focus {
-  outline: none;
-  border-color: #0056B3;
-  box-shadow: 0px 0px 10px rgba(0, 86, 179, 0.5);
-}
-
-/* Campus Name */
-h2 {
-  font-size: 22px;
-  color: var(--link-color); /* Blue */
-  margin-bottom: 20px;
-}
-
-/* Representative Cards */
-#rep-info {
-  text-align: left;
-}
-
-.rep-card {
-  margin: 15px 0;
-  padding: 15px;
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
-  background: var(--card-background);
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.rep-card div {
-  margin-bottom: 10px;
-}
-
-.rep-card div span:first-child {
-  font-weight: bold;
-  margin-right: 10px;
-}
-
-.rep-card div a {
-  color: var(--link-color); /* Blue */
-  text-decoration: none;
-}
-
-.rep-card div a:hover {
-  text-decoration: underline;
-}
-
-/* Footer */
-footer {
-  margin-top: 20px;
-  background: var(--secondary-color);
-  color: white;
-  padding: 10px;
-  font-size: 14px;
-  text-align: center;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  header h1 {
-    font-size: 22px;
-  }
-
-  main {
-    padding: 15px;
-    height: 80vh; /* Slightly more space for dropdown */
-  }
-
-  select {
-    font-size: 16px; /* Slightly smaller for small screens */
-    padding: 18px;
-  }
-
-  h2 {
-    font-size: 18px;
-  }
-
-  .rep-card {
-    padding: 10px;
-    font-size: 14px;
-  }
-
-  .rep-card div span:first-child {
-    margin-right: 5px;
-  }
-}
+  <script src="app.js"></script>
+</body>
+</html>
