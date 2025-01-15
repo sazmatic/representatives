@@ -15,8 +15,32 @@ const representatives = {
   "Dearborn": [
     { name: "Becky Smola", phone: "734-693-3076", email: "rebeccasmola1984@gmail.com" },
     { name: "Michella Vincent", phone: "313-585-1858", email: "michella.vincent@yahoo.com" }
+  ],
+  "Farmington Hills": [
+    { name: "Misty Croteau", phone: "734-658-0815", email: "mcroteau84@gmail.com" },
+    { name: "Debbie Miracle", phone: "313-333-3296", email: "miraclefour@sbcglobal.net" }
+  ],
+  "Grosse Pointe": [
+    { name: "Holly Kowal", phone: "313-418-2405", email: "lonemirage02@gmail.com" },
+    { name: "Jody Woodley", phone: "586-212-8398", email: "jlynnwoodley@yahoo.com" }
+  ],
+  "Wayne": [
+    { name: "Natalie Lunsford", phone: "734-250-4073", email: "natrn91@wowway.com" }
+  ],
+  "Southfield": [
+    { name: "Meredith Corseti", phone: "248-376-7712", email: "millermeredith@hotmail.com" },
+    { name: "Katie Wilson (Flex RN)", phone: "313-400-6424", email: "kwilso65@emich.edu" }
+  ],
+  "Taylor": [
+    { name: "Kimberly Pavlich", phone: "313-590-5276", email: "kimberly.ann15@ymail.com" },
+    { name: "Allison Lorentz", phone: "734-718-5366", email: "jrsice1@gmail.com" }
+  ],
+  "Trenton": [
+    { name: "Keli Wludyka", phone: "313-268-7768", email: "Kwludyka@wowway.com" },
+    { name: "Kerri Donovan", phone: "734-925-1162", email: "Kerridonovan5@gmail.com" },
+    { name: "Cari York", phone: "313-300-3523", email: "Dougcupcake@sbcglobal.net" },
+    { name: "Deb Lyles", phone: "313-549-7249", email: "Deblyles21@yahoo.com" }
   ]
-  // Add additional campuses as needed
 };
 
 function handleCampusChange() {
@@ -34,10 +58,7 @@ function handleCampusChange() {
       .map(rep => `
         <div class="rep-card">
           <div><span>Name:</span><span>${rep.name}</span></div>
-          <div>
-            <span>Phone:</span>
-            <a href="tel:${rep.phone.replace(/-/g, '')}">${rep.phone}</a>
-          </div>
+          <div><span>Phone:</span><a href="tel:${rep.phone.replace(/-/g, '')}">${rep.phone}</a></div>
           <div><span>Email:</span><a href="mailto:${rep.email}">${rep.email}</a></div>
         </div>
       `)
