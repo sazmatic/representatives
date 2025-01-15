@@ -1,75 +1,111 @@
+/* General Styles */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Arial', sans-serif; /* Clean, modern font */
   margin: 20px;
-  text-align: center;
-  background-color: #f4f4f9;
+  text-align: center; /* Center-align text for simplicity */
+  background-color: #f4f4f9; /* Light, neutral background color */
+  color: #333; /* Neutral text color */
 }
 
+/* Headings */
 h1 {
-  color: #333;
-  font-size: 24px;
+  font-size: 32px; /* Larger heading size */
+  font-weight: bold;
+  color: #0056b3; /* Accent color */
+  margin-bottom: 20px;
 }
 
+h2 {
+  font-size: 24px; /* Subheading size */
+  font-weight: 600;
+  color: #007BFF; /* Subtle contrast */
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+/* Labels */
 label {
   display: block;
-  margin: 20px 0 10px;
+  margin-bottom: 10px;
   font-size: 18px;
+  font-weight: bold;
+  color: #555;
 }
+
+/* Dropdown (Select) */
 select {
-  appearance: none; /* Removes default dropdown arrow */
-  -webkit-appearance: none; /* Safari compatibility */
-  -moz-appearance: none; /* Firefox compatibility */
-  padding: 15px 20px; /* Adds generous padding */
-  margin: 15px auto; /* Centers the dropdown */
-  font-size: 20px; /* Makes the text larger */
-  font-weight: 500; /* Slightly bold text */
-  width: 70%; /* Makes it wider */
-  max-width: 600px; /* Caps the maximum width */
-  border: 2px solid #ccc; /* Defines a subtle border */
-  border-radius: 10px; /* Adds smooth rounded corners */
-  background-color: #ffffff; /* White background */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding: 15px 20px;
+  margin: 15px auto;
+  font-size: 20px;
+  font-weight: 500;
+  width: 70%;
+  max-width: 600px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  background-color: #ffffff;
   background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"%3E%3Cpath fill="%23333" d="M2 0L0 2h4zM2 5L0 3h4z"/%3E%3C/svg%3E');
   background-repeat: no-repeat;
-  background-position: right 15px center; /* Positions custom arrow */
-  background-size: 10px; /* Scales the arrow */
-  color: #333; /* Text color */
-  text-align: left; /* Aligns text to the left */
-  cursor: pointer; /* Changes cursor to a pointer on hover */
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Adds a soft shadow */
+  background-position: right 15px center;
+  background-size: 10px;
+  color: #333;
+  text-align: left;
+  cursor: pointer;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 select:hover {
-  border-color: #007BFF; /* Changes border color on hover */
+  border-color: #007BFF;
 }
 
 select:focus {
-  outline: none; /* Removes default outline */
-  border-color: #0056b3; /* Highlights border when focused */
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Adds focus glow */
+  outline: none;
+  border-color: #0056b3;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
-#campus-name {
-  margin-top: 30px;
-  color: #0056b3;
-  font-size: 22px;
-  font-weight: bold;
-}
-
+/* Representative Info Box */
 #rep-info {
   margin-top: 20px;
-  padding: 15px;
-  border: 1px solid #ccc;
+  padding: 20px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
   background-color: #ffffff;
-  display: inline-block;
   text-align: left;
-  border-radius: 5px;
+  display: inline-block;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#rep-info div {
+  margin-bottom: 15px;
 }
 
 a {
   color: #007BFF;
   text-decoration: none;
+  font-weight: bold;
 }
 
 a:hover {
   text-decoration: underline;
+}
+
+/* Buttons (if needed) */
+button {
+  padding: 12px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #007BFF;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
