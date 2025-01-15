@@ -126,11 +126,16 @@ select option[value=""] {
   display: none; /* Hide the empty option from being visible */
 }
 
-/* Campus Name */
-h2 {
-  font-size: 22px;
-  color: var(--link-color);
-  margin-top: 20px;
+/* Campus Name (Title After Selection) */
+#campus-name {
+  font-size: 28px; /* Slightly larger font size */
+  font-weight: bold; /* Make it stand out */
+  color: #000; /* Set to black for a polished look */
+  margin-top: 25px; /* Add some space above */
+  text-transform: capitalize; /* Capitalize each word */
+  letter-spacing: 0.5px; /* Add subtle letter spacing for readability */
+  text-align: center; /* Ensure it's centered */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Add a slight shadow for polish */
 }
 
 /* Representative Cards */
