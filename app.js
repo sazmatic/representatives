@@ -26,6 +26,10 @@ document.getElementById('campus-select').addEventListener('change', function () 
       { name: "Misty Croteau", phone: "734-658-0815", email: "mcroteau84@gmail.com" },
       { name: "Debbie Miracle", phone: "313-333-3296", email: "miraclefour@sbcglobal.net" }
     ],
+    "Grosse Pointe": [
+      { name: "Holly Kowal", phone: "313-418-2405", email: "lonemirage02@gmail.com" },
+      { name: "Jody Woodley", phone: "586-212-8398", email: "jlynnwoodley@yahoo.com" }
+    ],
     "Wayne": [
       { name: "Natalie Lunsford", phone: "734-250-4073", email: "natrn91@wowway.com" },
     ],
