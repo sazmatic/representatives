@@ -117,7 +117,7 @@ button:hover {
   border-radius: 10px; /* Adds rounded corners */
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
 }
-#campus-photo {
+#static-logo {
   box-shadow: none; /* Removes any shadow */
   border: none; /* Removes any border */
   display: block; /* Ensures proper alignment */
