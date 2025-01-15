@@ -13,7 +13,7 @@
 
   <main>
     <!-- Dropdown Menu -->
-    <label for="campus-select" class="dropdown-label">Select your campus:</label>
+    <label for="campus-select">Select your campus:</label>
     <select id="campus-select" aria-label="Campus Selector">
       <option value="">--Select Campus--</option>
       <option value="Royal Oak">Royal Oak</option>
@@ -28,16 +28,16 @@
     </select>
 
     <!-- Dynamic Campus Name -->
-    <h2 id="campus-name" style="display: none;" aria-live="polite"></h2>
+    <h2 id="campus-name" style="display: none;"></h2>
 
     <!-- Representative Information -->
-    <div id="rep-info" class="representative-info" style="display: none;" aria-label="Representative Information">
-      <p id="rep-name"></p>
+    <div id="rep-info" style="display: none;">
+      <div id="rep-name"></div>
     </div>
   </main>
 
   <footer>
-    <p>&copy; 2025 Teamsters Local 2024. All rights reserved</p>
+    <p>&copy; 2025 Teamsters Local 2024</p>
   </footer>
 
   <script src="app.js"></script>
