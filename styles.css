@@ -69,7 +69,7 @@ select:focus {
 /* Campus Name */
 h2 {
   font-size: 22px;
-  color: var(--link-color); /* Updated to blue */
+  color: var(--link-color); /* Blue */
   margin-bottom: 20px;
 }
 
@@ -97,7 +97,7 @@ h2 {
 }
 
 .rep-card div a {
-  color: var(--link-color); /* Updated to blue */
+  color: var(--link-color); /* Blue */
   text-decoration: none;
 }
 
@@ -121,6 +121,11 @@ footer {
     font-size: 22px;
   }
 
+  main {
+    margin: 10px auto;
+    padding: 15px;
+  }
+
   select {
     font-size: 14px;
     padding: 12px;
@@ -128,5 +133,14 @@ footer {
 
   h2 {
     font-size: 18px;
+  }
+
+  .rep-card {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .rep-card div span:first-child {
+    margin-right: 5px;
   }
 }
