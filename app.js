@@ -1,6 +1,7 @@
 // Dropdown selection handler
 document.getElementById('campus-select').addEventListener('change', function () {
   const campus = this.value; // Get selected campus
+  const campusName = document.getElementById('campus-name');
   const repInfo = document.getElementById('rep-info');
   const repName = document.getElementById('rep-name');
 
@@ -40,8 +41,12 @@ document.getElementById('campus-select').addEventListener('change', function () 
     ]
   };
 
-  // Display representative info
+  // Display the selected campus name
   if (campus) {
+    campusName.textContent = campus; // Set the campus name
+    campusName.style.display = 'block';
+
+    // Display representatives for the selected campus
     const reps = representatives[campus];
     repName.innerHTML = reps.map(rep => `
       <div style="margin-bottom: 15px;">
@@ -49,9 +54,10 @@ document.getElementById('campus-select').addEventListener('change', function () 
         <strong>Phone:</strong> <a href="tel:${rep.phone}">${rep.phone}</a><br>
         <strong>Email:</strong> <a href="mailto:${rep.email}">${rep.email}</a>
       </div>
-    `).join(''); // Join all reps for the selected campus
+    `).join('');
     repInfo.style.display = 'block';
   } else {
+    campusName.style.display = 'none';
     repInfo.style.display = 'none';
   }
 });
