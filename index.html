@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Find Your Representative</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Find Your Campus Representative</h1>
+  
+  <!-- Dropdown Menu -->
+  <label for="campus-select">Select your campus:</label>
+  <select id="campus-select">
+    <option value="">--Select Campus--</option>
+    <option value="Royal Oak">Royal Oak</option>
+    <option value="Troy">Troy</option>
+    <option value="Dearborn">Dearborn</option>
+    <option value="Farmington Hills">Farmington Hills</option>
+    <option value="Wayne">Wayne</option>
+    <option value="Southfield">Southfield</option>
+    <option value="Taylor">Taylor</option>
+    <option value="Trenton">Trenton</option>
+  </select>
+
+  <!-- Representative Information -->
+  <div id="rep-info" style="display: none;">
+    <h2>Representative Information</h2>
+    <p id="rep-name"></p>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
