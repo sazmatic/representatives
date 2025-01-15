@@ -19,10 +19,11 @@ body {
 }
 
 header {
-  background: var(--primary-gradient);
+  background: linear-gradient(90deg, #007BFF, #0056B3); /* Blue gradient */
   color: white;
   padding: 20px 0;
   text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
 }
 
 header h1 {
