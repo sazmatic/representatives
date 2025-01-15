@@ -95,13 +95,18 @@ select option {
   transition: all 0.3s ease-in-out;
 }
 
-/* Hide floating label when dropdown is focused or has a value */
+/* When the select has focus or a value, move the label above */
 select:focus + .floating-label,
 select:not([value=""]) + .floating-label {
-  top: -12px;
-  left: 15px;
-  font-size: 14px;
-  color: var(--link-color); /* Highlight label on focus */
+  top: -12px; /* Move above the dropdown */
+  left: 15px; /* Slightly adjust to the left */
+  font-size: 14px; /* Shrink font size */
+  color: var(--link-color); /* Highlight the label */
+}
+
+/* Hide floating label if a value is selected */
+select:not([value=""]) + .floating-label {
+  display: none; /* Completely remove the floating label */
 }
 
 /* Campus Name */
