@@ -35,7 +35,12 @@ header h1 {
 
 /* Main Content */
 main {
-  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70vh; /* Takes most of the viewport height */
+  margin: 0 auto;
   max-width: 600px;
   background: var(--card-background);
   padding: 20px;
@@ -44,16 +49,18 @@ main {
 }
 
 select {
-  width: 100%;
-  padding: 15px;
-  font-size: 16px;
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
+  width: 90%; /* Increase width to make it prominent */
+  max-width: 500px;
+  padding: 20px; /* Increased padding for touch-friendly interaction */
+  font-size: 18px; /* Larger font size */
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
   margin: 20px 0;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   appearance: none;
   background-color: #ffffff;
   color: var(--neutral-color);
+  font-weight: bold; /* Makes text stand out */
 }
 
 select:hover {
@@ -63,7 +70,7 @@ select:hover {
 select:focus {
   outline: none;
   border-color: #0056B3;
-  box-shadow: 0px 0px 5px rgba(0, 86, 179, 0.5);
+  box-shadow: 0px 0px 10px rgba(0, 86, 179, 0.5);
 }
 
 /* Campus Name */
@@ -122,13 +129,13 @@ footer {
   }
 
   main {
-    margin: 10px auto;
     padding: 15px;
+    height: 80vh; /* Slightly more space for dropdown */
   }
 
   select {
-    font-size: 14px;
-    padding: 12px;
+    font-size: 16px; /* Slightly smaller for small screens */
+    padding: 18px;
   }
 
   h2 {
