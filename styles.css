@@ -19,20 +19,21 @@ body {
   text-align: center;
 }
 header {
-  background: linear-gradient(90deg, #0066CC, #003399); /* Vibrant gradient matching the Weingarten card */
+  background: linear-gradient(90deg, #0066CC, #003399); /* Vibrant blue gradient */
   color: #ffd700; /* Yellow font */
-  padding: 30px 0; /* Add spacing for the header */
+  padding: 40px 0; /* Add more height for a balanced look */
   text-align: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Stronger shadow for depth */
+}
 
 header h1 {
-  font-size: 26px !important; /* Slightly larger font for emphasis */
-  font-weight: bold; /* Keep bold styling */
-  text-transform: uppercase; /* Capitalize all letters */
-  letter-spacing: 1.2px; /* Add more spacing for a clean look */
+  font-family: 'Roboto', sans-serif;
+  font-size: 28px; /* Slightly larger font for prominence */
+  font-weight: 700; /* Make it bold */
+  text-transform: uppercase; /* Ensure all caps */
+  letter-spacing: 1.2px; /* Add clean spacing */
   margin: 0;
-  line-height: 1.4; /* Slightly increased line height */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Add depth to the text */
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2); /* Subtle glow effect */
 }
 }
 
