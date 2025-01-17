@@ -204,22 +204,44 @@ footer {
     padding: 10px;
   }
 }
+/* Image Container Styling */
 .image-container {
-  margin: 20px auto; /* Center the container with space above and below */
-  text-align: center; /* Center-align the image */
+  margin: 20px auto; /* Center with spacing above and below */
+  text-align: center; /* Center the content inside */
+  max-width: 90%; /* Restrict width to 90% of the screen */
+  background-color: #f9f9f9; /* Optional: Light background for contrast */
+  padding: 10px; /* Add padding for a polished look */
+  border-radius: 8px; /* Rounded edges */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  border: 1px solid #ddd; /* Light border for structure */
 }
 
-.centered-image {
-  max-width: 100%; /* Ensure the image scales within its container */
-  height: auto; /* Maintain the aspect ratio */
-  border-radius: 8px; /* Add rounded corners */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow for depth */
-  border: 1px solid #ddd; /* Optional: Add a light border */
+/* Image Styling */
+.responsive-image {
+  width: 100%; /* Scale the image to fit its container */
+  max-width: 400px; /* Limit the image's maximum width */
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Ensures no extra space around the image */
+  margin: 0 auto; /* Center the image */
+  border-radius: 8px; /* Optional: Rounded corners */
 }
 
-/* Mobile Responsiveness */
+/* Caption Styling */
+.image-caption {
+  margin-top: 10px; /* Space above the caption */
+  font-size: 14px; /* Slightly smaller font */
+  color: #555; /* Neutral color for the text */
+  font-style: italic; /* Optional: Italicize for emphasis */
+}
+
+/* Responsive Adjustments */
 @media (max-width: 768px) {
-  iframe {
-    height: 300px; /* Reduce height for smaller screens */
+  .image-container {
+    max-width: 95%; /* Expand slightly on smaller screens */
+    padding: 15px; /* Increase padding for better spacing */
+  }
+
+  .image-caption {
+    font-size: 13px; /* Adjust font size for smaller screens */
   }
 }
