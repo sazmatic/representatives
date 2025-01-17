@@ -21,16 +21,16 @@ body {
 header {
   background-color: #0056b3; /* Blue background */
   color: #ffd700; /* Yellow font */
-  padding: 10px 0; /* Compact padding for a smaller header */
+  padding: 20px 0; /* Compact padding for a smaller header */
   text-align: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
 header h1 {
-  font-size: 16px !important; /* Force the font size to apply */
+  font-size: 20px !important; /* Force the font size to apply */
   font-weight: bold; /* Keep bold styling */
   text-transform: uppercase; /* Capitalize all letters */
-  letter-spacing: 0.5px; /* Tighten spacing */
+  letter-spacing: 1px; /* Tighten spacing */
   margin: 0;
   line-height: 1.2; /* Compact line spacing */
 }
