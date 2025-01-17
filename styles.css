@@ -205,8 +205,16 @@ footer {
     padding: 12px 15px;
   }
 
-  h2 {
-    font-size: 18px;
+  main h2 {
+  font-size: 22px; /* Modern font size */
+  font-weight: bold; /* Emphasize the title */
+  color: #003399; /* Use a deeper blue for consistency */
+  text-transform: uppercase; /* Capitalize for emphasis */
+  letter-spacing: 0.8px; /* Subtle spacing for a clean look */
+  margin-bottom: 15px; /* Add space below the title */
+  text-align: center;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
   }
 
   .rep-card {
