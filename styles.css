@@ -204,3 +204,14 @@ footer {
     padding: 10px;
   }
 }
+.pdf-container {
+  margin: 20px auto;
+  max-width: 800px; /* Adjust maximum width for the PDF */
+  text-align: center; /* Center the container */
+  border: 1px solid #ddd; /* Optional: Add a light border */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for depth */
+}
+
+iframe {
+  border: none; /* Remove default iframe border */
+}
