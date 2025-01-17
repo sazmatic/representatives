@@ -19,11 +19,11 @@ body {
   text-align: center;
 }
 header {
-  background: linear-gradient(90deg, #0077FF, #0033AA); /* Brighter and deeper blues */
+  background: linear-gradient(90deg, #0066CC, #003399); /* Vibrant gradient matching the Weingarten card */
   color: #ffd700; /* Yellow font */
   padding: 30px 0; /* Add spacing for the header */
   text-align: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */}
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 
 header h1 {
   font-size: 26px !important; /* Slightly larger font for emphasis */
