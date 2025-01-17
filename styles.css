@@ -28,7 +28,7 @@ header {
 }
 
 header h1 {
-  font-size: 28px; /* Larger, modern font size */
+  font-size: 22px; /* Larger, modern font size */
   font-weight: bold; /* Make the text bold */
   text-transform: uppercase; /* Capitalize all letters */
   letter-spacing: 1px; /* Add spacing between letters for a modern look */
@@ -38,7 +38,7 @@ header h1 {
 
 @media (max-width: 768px) {
   header h1 {
-    font-size: 22px; /* Adjust font size for smaller screens */
+    font-size: 18px; /* Adjust font size for smaller screens */
   }
 }
 /* Main Section */
