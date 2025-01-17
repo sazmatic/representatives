@@ -204,19 +204,17 @@ footer {
     padding: 10px;
   }
 }
-.pdf-container {
-  margin: 20px auto;
-  max-width: 90%; /* Responsive width: 90% of the screen width */
-  text-align: center;
-  border: 1px solid #ddd; /* Light border for a polished look */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  overflow: hidden; /* Prevent content from spilling */
+.image-container {
+  margin: 20px auto; /* Center the container with space above and below */
+  text-align: center; /* Center-align the image */
 }
 
-iframe {
-  width: 100%; /* Ensures the iframe takes full width of the container */
-  height: 500px; /* Default height */
-  border: none; /* Removes iframe border */
+.centered-image {
+  max-width: 100%; /* Ensure the image scales within its container */
+  height: auto; /* Maintain the aspect ratio */
+  border-radius: 8px; /* Add rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow for depth */
+  border: 1px solid #ddd; /* Optional: Add a light border */
 }
 
 /* Mobile Responsiveness */
