@@ -18,28 +18,27 @@ body {
   padding: 0;
   text-align: center;
 }
-
 header {
-  background-color: #0056b3; /* Blue background matching your PNG */
-  color: #ffd700; /* Yellow font matching the bold style */
-  padding: 10px 0;
+  background-color: #0056b3; /* Blue background */
+  color: #ffd700; /* Yellow font */
+  padding: 10px 0; /* Compact padding for a smaller header */
   text-align: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
 header h1 {
-  font-size: 18px; /* Larger, modern font size */
-  font-weight: bold; /* Make the text bold */
+  font-size: 16px !important; /* Force the font size to apply */
+  font-weight: bold; /* Keep bold styling */
   text-transform: uppercase; /* Capitalize all letters */
-  letter-spacing: 0.5px; /* Add spacing between letters for a modern look */
+  letter-spacing: 0.5px; /* Tighten spacing */
   margin: 0;
-  line-height: 1.2;
+  line-height: 1.2; /* Compact line spacing */
 }
 
 @media (max-width: 768px) {
   header h1 {
-    font-size: 18px; /* Adjust font size for smaller screens */
-    letter-spacing: 0.5px; /* Slightly tighter spacing */
+    font-size: 14px !important; /* Force smaller font size on mobile */
+    letter-spacing: 0.4px; /* Adjust spacing for clarity */
   }
 }
 /* Main Section */
