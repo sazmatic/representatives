@@ -37,7 +37,7 @@ header h1 {
 
 @media (max-width: 768px) {
   header h1 {
-    font-size: 14px !important; /* Force smaller font size on mobile */
+    font-size: 18px !important; /* Force smaller font size on mobile */
     letter-spacing: 0.4px; /* Adjust spacing for clarity */
   }
 }
