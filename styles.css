@@ -28,7 +28,7 @@ header {
 }
 
 header h1 {
-  font-size: 32px; /* Larger, modern font size */
+  font-size: 28px; /* Larger, modern font size */
   font-weight: bold; /* Make the text bold */
   text-transform: uppercase; /* Capitalize all letters */
   letter-spacing: 1px; /* Add spacing between letters for a modern look */
