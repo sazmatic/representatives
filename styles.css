@@ -27,7 +27,7 @@ header {
 }
 
 header h1 {
-  font-size: 22px !important; /* Force the font size to apply */
+  font-size: 24px !important; /* Force the font size to apply */
   font-weight: bold; /* Keep bold styling */
   text-transform: uppercase; /* Capitalize all letters */
   letter-spacing: 1px; /* Tighten spacing */
