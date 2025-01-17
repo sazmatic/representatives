@@ -190,12 +190,16 @@ select option[value=""] {
 }
 /* Footer */
 footer {
-  margin-top: 20px;
+  margin-top: 40px;
   background: var(--secondary-color);
   color: white;
-  padding: 10px;
+  padding: 20px;
+  font-family: 'Roboto', sans-serif;
   font-size: 14px;
   text-align: center;
+  border-radius: 0 0 8px 8px; /* Rounded corners at the bottom */
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
 }
 
 /* Responsive Design */
