@@ -209,39 +209,23 @@ footer {
   margin: 20px auto; /* Center the container */
   text-align: center; /* Center-align the content */
   max-width: 90%; /* Restrict container width */
-  padding: 15px; /* Add more spacing around the image */
-  background-color: #ffffff; /* Add a background to make it pop */
-  border-radius: 12px; /* Softer rounded corners for the container */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhance shadow for a 3D effect */
-  border: 1px solid #e0e0e0; /* Light border for structure */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+  padding: 15px; /* Add spacing around the image */
 }
 
 /* Image Styling */
 .responsive-image {
-  width: 100%; /* Scale image to fit the container */
+  width: 100%; /* Scale the image to fit the container */
   max-width: 300px; /* Restrict the maximum width */
-  height: auto; /* Maintain the aspect ratio */
+  height: auto; /* Maintain aspect ratio */
   display: block; /* Ensure no inline spacing issues */
   margin: 0 auto; /* Center-align the image */
   border-radius: 8px; /* Rounded corners for the image */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow on the image itself */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for the image */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
 }
 
-/* Hover Effect for 3D Pop-Up */
-.image-container:hover {
+/* Hover Effect for Image */
+.responsive-image:hover {
   transform: translateY(-5px); /* Slight upward lift on hover */
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* Stronger shadow for emphasis */
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  .responsive-image {
-    max-width: 250px; /* Make the image slightly smaller on mobile */
-  }
-
-  .image-container {
-    padding: 10px; /* Reduce padding on smaller screens */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Soften shadow for mobile */
-  }
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
 }
