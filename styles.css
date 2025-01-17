@@ -19,20 +19,22 @@ body {
   text-align: center;
 }
 header {
-  background-color: #0056b3; /* Blue background */
-  color: #ffd700; /* Yellow font */
-  padding: 20px 0; /* Compact padding for a smaller header */
+  background: var(--primary-gradient); /* Use the gradient for a modern look */
+  color: #ffd700; /* Keep the yellow font */
+  padding: 30px 0; /* Slightly larger padding for better spacing */
   text-align: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Stronger shadow for more depth */
 }
 
 header h1 {
-  font-size: 24px !important; /* Force the font size to apply */
+  font-size: 26px !important; /* Slightly larger font for emphasis */
   font-weight: bold; /* Keep bold styling */
   text-transform: uppercase; /* Capitalize all letters */
-  letter-spacing: 1px; /* Tighten spacing */
+  letter-spacing: 1.2px; /* Add more spacing for a clean look */
   margin: 0;
-  line-height: 1.2; /* Compact line spacing */
+  line-height: 1.4; /* Slightly increased line height */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Add depth to the text */
+}
 }
 
 @media (max-width: 768px) {
