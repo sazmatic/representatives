@@ -11,7 +11,7 @@
 
 /* General Styles */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
   background: var(--background-color);
   color: var(--neutral-color);
   margin: 0;
