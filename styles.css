@@ -154,33 +154,40 @@ select option[value=""] {
 }
 
 .rep-card {
-  margin: 15px 0;
-  padding: 15px;
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
-  background: var(--card-background);
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-  line-height: 1.8; /* Increase line height for better spacing */
+  margin: 15px 0; /* Space between cards */
+  padding: 15px; /* Inner spacing for readability */
+  border: 1px solid var(--border-color); /* Subtle border */
+  border-radius: 8px; /* Rounded corners */
+  background: var(--card-background); /* Maintain variable background */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Slightly deeper shadow */
+  line-height: 1.8; /* Maintain spacing between lines */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth animation */
+}
+
+.rep-card:hover {
+  transform: translateY(-5px); /* Lift card slightly on hover */
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
 }
 
 .rep-card div {
-  margin-bottom: 10px; /* Add spacing between each item */
+  margin-bottom: 10px; /* Space between items */
 }
 
 .rep-card div span:first-child {
-  font-weight: bold;
+  font-weight: bold; /* Keep bold labels */
   margin-right: 5px;
 }
 
 .rep-card div a {
-  color: var(--link-color);
-  text-decoration: none;
+  color: var(--link-color); /* Use link color for consistency */
+  text-decoration: none; /* Remove underline for cleaner look */
+  transition: color 0.3s ease; /* Smooth color change on hover */
 }
 
 .rep-card div a:hover {
-  text-decoration: underline;
+  color: #0056b3; /* Slightly darker blue for hover effect */
+  text-decoration: underline; /* Add underline on hover */
 }
-
 /* Footer */
 footer {
   margin-top: 20px;
