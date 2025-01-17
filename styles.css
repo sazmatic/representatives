@@ -22,7 +22,7 @@ body {
 header {
   background-color: #0056b3; /* Blue background matching your PNG */
   color: #ffd700; /* Yellow font matching the bold style */
-  padding: 20px 0;
+  padding: 15px 0;
   text-align: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
 }
@@ -39,6 +39,7 @@ header h1 {
 @media (max-width: 768px) {
   header h1 {
     font-size: 18px; /* Adjust font size for smaller screens */
+    letter-spacing: 0.5px; /* Slightly tighter spacing */
   }
 }
 /* Main Section */
