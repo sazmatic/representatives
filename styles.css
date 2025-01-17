@@ -19,12 +19,11 @@ body {
   text-align: center;
 }
 header {
-  background: var(--primary-gradient); /* Use the gradient for a modern look */
-  color: #ffd700; /* Keep the yellow font */
-  padding: 30px 0; /* Slightly larger padding for better spacing */
+  background: linear-gradient(90deg, #0077FF, #0033AA); /* Brighter and deeper blues */
+  color: #ffd700; /* Yellow font */
+  padding: 30px 0; /* Add spacing for the header */
   text-align: center;
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Stronger shadow for more depth */
-}
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */}
 
 header h1 {
   font-size: 26px !important; /* Slightly larger font for emphasis */
