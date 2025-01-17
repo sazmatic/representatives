@@ -22,19 +22,19 @@ body {
 header {
   background: linear-gradient(90deg, #0066CC, #003399); /* Vibrant blue gradient */
   color: #ffd700; /* Yellow font */
-  padding: 40px 0; /* Add more height for a balanced look */
+  padding: 40px 0; /* Add height for balance */
   text-align: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Stronger shadow for depth */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
 header h1 {
-  font-family: 'Roboto', sans-serif;
-  font-size: 24px; /* Slightly larger font for prominence */
-  font-weight: 700; /* Make it bold */
-  text-transform: uppercase; /* Ensure all caps */
-  letter-spacing: 1.2px; /* Add clean spacing */
+  font-family: 'Roboto', sans-serif; /* Modern font */
+  font-size: 28px; /* Prominent size */
+  font-weight: 700; /* Bold weight */
+  text-transform: uppercase; /* All caps for emphasis */
+  letter-spacing: 1.2px; /* Clean spacing */
   margin: 0;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2); /* Subtle glow effect */
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2); /* Subtle text shadow for depth */
 }
 }
 
