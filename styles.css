@@ -28,7 +28,7 @@ header {
 
 header h1 {
   font-family: 'Roboto', sans-serif;
-  font-size: 28px; /* Slightly larger font for prominence */
+  font-size: 24px; /* Slightly larger font for prominence */
   font-weight: 700; /* Make it bold */
   text-transform: uppercase; /* Ensure all caps */
   letter-spacing: 1.2px; /* Add clean spacing */
