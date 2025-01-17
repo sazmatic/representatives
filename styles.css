@@ -28,13 +28,16 @@ header {
 }
 
 header h1 {
-  font-family: 'Roboto', sans-serif; /* Modern font */
+  font-family: 'Roboto', sans-serif; /* Ensure the font is applied */
   font-size: 28px; /* Prominent size */
-  font-weight: 700; /* Bold weight */
-  text-transform: uppercase; /* All caps for emphasis */
+  font-weight: 700; /* Bold weight for emphasis */
+  text-transform: uppercase; /* Ensure text is all caps */
+  color: #ffd700; /* Yellow text color */
   letter-spacing: 1.2px; /* Clean spacing */
-  margin: 0;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2); /* Subtle text shadow for depth */
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3); /* Add subtle depth */
+  margin: 0; /* Reset default margin */
+  line-height: 1.4; /* Ensure proper spacing between lines */
+  text-align: center; /* Center the title */
 }
 }
 
