@@ -11,12 +11,13 @@
 
 /* General Styles */
 body {
-  font-family: 'Roboto', sans-serif;
-  background: var(--background-color);
-  color: var(--neutral-color);
+  background: linear-gradient(180deg, #f5f5f5, #e0e0e0); /* Light gray gradient */
+  font-family: 'Roboto', sans-serif; /* Modern font */
+  color: var(--neutral-color); /* Neutral text color */
   margin: 0;
   padding: 0;
   text-align: center;
+}
 }
 header {
   background: linear-gradient(90deg, #0066CC, #003399); /* Vibrant blue gradient */
