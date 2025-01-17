@@ -206,12 +206,22 @@ footer {
 }
 .pdf-container {
   margin: 20px auto;
-  max-width: 800px; /* Adjust maximum width for the PDF */
-  text-align: center; /* Center the container */
-  border: 1px solid #ddd; /* Optional: Add a light border */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for depth */
+  max-width: 90%; /* Responsive width: 90% of the screen width */
+  text-align: center;
+  border: 1px solid #ddd; /* Light border for a polished look */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  overflow: hidden; /* Prevent content from spilling */
 }
 
 iframe {
-  border: none; /* Remove default iframe border */
+  width: 100%; /* Ensures the iframe takes full width of the container */
+  height: 500px; /* Default height */
+  border: none; /* Removes iframe border */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  iframe {
+    height: 300px; /* Reduce height for smaller screens */
+  }
 }
