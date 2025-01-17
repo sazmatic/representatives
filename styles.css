@@ -22,16 +22,16 @@ body {
 header {
   background-color: #0056b3; /* Blue background matching your PNG */
   color: #ffd700; /* Yellow font matching the bold style */
-  padding: 15px 0;
+  padding: 10px 0;
   text-align: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
 }
 
 header h1 {
-  font-size: 22px; /* Larger, modern font size */
+  font-size: 18px; /* Larger, modern font size */
   font-weight: bold; /* Make the text bold */
   text-transform: uppercase; /* Capitalize all letters */
-  letter-spacing: 1px; /* Add spacing between letters for a modern look */
+  letter-spacing: 0.5px; /* Add spacing between letters for a modern look */
   margin: 0;
   line-height: 1.2;
 }
