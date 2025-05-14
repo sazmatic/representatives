@@ -302,3 +302,9 @@ footer {
   color: #444;
   line-height: 1.6;
 }
+
+@media (max-width: 768px) {
+  .qa-section > h2 {
+    font-size: 18px;
+  }
+}
