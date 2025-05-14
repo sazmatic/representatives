@@ -271,15 +271,14 @@ footer {
   margin: 0 auto;
   text-align: left;
 }
-
 .qa-section > h2 {
-  font-size: 26px;
+  font-size: clamp(16px, 4vw, 26px); /* Responsive size that scales down */
   color: var(--highlight-color);
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 30px;
   text-align: center;
-  white-space: nowrap;
+  white-space: nowrap;            /* Force one line */
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -303,8 +302,4 @@ footer {
   line-height: 1.6;
 }
 
-@media (max-width: 768px) {
-  .qa-section > h2 {
-    font-size: 18px;
-  }
-}
+
