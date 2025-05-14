@@ -1,179 +1,186 @@
-/* CSS Variables for Styling */
 :root {
-  --primary-gradient: linear-gradient(90deg, #007BFF, #0056B3); /* Header Gradient */
-  --secondary-color: #0056B3; /* Footer Background */
-  --neutral-color: #333; /* Neutral Text */
-  --background-color: #f5f5f5; /* Page Background */
-  --card-background: #ffffff; /* Card Background */
-  --border-color: #ddd; /* Light Border */
-  --link-color: #007BFF; /* Blue for Links */
+  --primary-color: #333;
+  --accent-color: #007BFF;
+  --highlight-color: #003366; /* Navy Blue */
+  --border-color: #e0e0e0;
+  --card-bg: #ffffff;
+  --background-color: #ffffff;
+  --text-muted: #666;
 }
 
-/* General Styles */
+/* ========================= */
+/*        GLOBAL STYLES      */
+/* ========================= */
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
   background: var(--background-color);
-  color: var(--neutral-color);
+  color: var(--primary-color);
   margin: 0;
   padding: 0;
   text-align: center;
 }
-header {
-  background: linear-gradient(90deg, #0066CC, #003399); /* Vibrant gradient matching the Weingarten card */
-  color: #ffd700; /* Yellow font */
-  padding: 30px 0; /* Add spacing for the header */
-    text-transform: uppercase; /* Capitalize all letters */
+
+/* ========================= */
+/*         HERO HEADER       */
+/* ========================= */
+
+.hero {
+  background: #fff;
+  padding: 30px 20px 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  border-bottom: 1px solid #ddd;
+}
 
-header h1 {
-  font-size: 26px !important; /* Slightly larger font for emphasis */
-  font-weight: bold; /* Keep bold styling */
-  text-transform: uppercase; /* Capitalize all letters */
-  letter-spacing: 1.2px; /* Add more spacing for a clean look */
+/* Horizontal layout for logo + title */
+.hero-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Bigger logo */
+.logo {
+  max-width: 250px;
+  height: auto;
+}
+
+.hero-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--highlight-color); /* Navy Blue */
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
   margin: 0;
-  line-height: 1.4; /* Slightly increased line height */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Add depth to the text */
+  padding: 12px 24px;
+  border: 2px solid var(--highlight-color);
+  border-radius: 8px;
+  background-color: #f0f4f9;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  white-space: nowrap;       /* ✅ keeps it on one line */
+  overflow-x: auto;          /* ✅ lets it scroll if needed */
 }
 }
 
-@media (max-width: 768px) {
-  header h1 {
-    font-size: 18px !important; /* Force smaller font size on mobile */
-    letter-spacing: 0.4px; /* Adjust spacing for clarity */
-  }
+/* Subtitle below */
+.hero-subtitle {
+  font-size: 18px;
+  color: var(--text-muted);
+  font-weight: 500;
+  margin-top: 15px;
+  padding: 6px 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #f9f9f9;
+  display: inline-block;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
-/* Main Section */
+
+/* ========================= */
+/*           MAIN            */
+/* ========================= */
+
 main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
+  padding: 30px 20px;
 }
 
-/* Dropdown Wrapper */
+main h2 {
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--highlight-color);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 20px;
+}
+
+/* Dropdown */
 .dropdown-wrapper {
-  position: relative;
-  width: 90%;
-  max-width: 500px;
+  width: 100%;
+  max-width: 400px;
   margin: 20px auto;
 }
 
-/* Select Dropdown */
 select {
   width: 100%;
   padding: 15px 20px;
   font-size: 18px;
-  border: 2px solid #ccc;
+  border: 1px solid var(--border-color);
   border-radius: 8px;
-  background: white;
-  appearance: none;
-  color: #333;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-  text-align: center; /* Centers the text horizontally */
-  text-align-last: center; /* Ensures the selected text stays centered */
+  background-color: #fff;
+  color: var(--primary-color);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  text-align-last: center;
 }
 
 select:focus {
   outline: none;
-  border-color: #007BFF;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-}
-
-/* Styling for Placeholder */
-select:invalid {
-  color: #aaa; /* Light gray for placeholder */
-}
-
-/* Ensure other options are also centered */
-select option {
-  text-align: center;
-  color: #333; /* Default color for options */
-}
-
-/* Floating Label */
-.floating-label {
-  position: absolute;
-  top: 50%;
-  left: 20px;
-  transform: translateY(-50%);
-  font-size: 18px;
-  color: #666;
-  background: var(--background-color); /* Prevent overlap */
-  padding: 0 5px; /* Padding for spacing */
-  pointer-events: none; /* Prevent interaction */
-  transition: all 0.3s ease-in-out;
-}
-
-/* Move the label above when the dropdown has focus or a value */
-select:focus + .floating-label,
-select:not([value=""]) + .floating-label {
-  top: -12px;
-  left: 15px;
-  font-size: 14px;
-  color: var(--link-color); /* Highlight label */
-}
-
-/* Remove redundant placeholder style */
-select {
-  appearance: none; /* Disable default dropdown styling */
-  width: 100%;
-  padding: 15px;
-  font-size: 18px;
-  border: 2px solid var(--border-color);
-  border-radius: 8px;
-  background-color: white;
-  color: #333;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-select:focus {
-  border-color: #007BFF;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  border-color: var(--accent-color);
+  box-shadow: 0 0 6px rgba(0, 123, 255, 0.3);
 }
 
 select option[value=""] {
-  display: none; /* Hide the empty option from being visible */
+  display: none;
 }
 
-/* Campus Name (Title After Selection) */
+select:invalid {
+  color: #aaa;
+}
+
+select option {
+  text-align: center;
+  color: #333;
+}
+
+/* ========================= */
+/*        REP SECTION        */
+/* ========================= */
+
 #campus-name {
-  font-size: 28px; /* Slightly larger font size */
-  font-weight: bold; /* Make it stand out */
-  color: #000; /* Set to black for a polished look */
-  margin-top: 25px; /* Add some space above */
-  text-transform: capitalize; /* Capitalize each word */
-  letter-spacing: 0.5px; /* Add subtle letter spacing for readability */
-  text-align: center; /* Ensure it's centered */
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Add a slight shadow for polish */
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-top: 30px;
+  text-transform: capitalize;
 }
 
-/* Representative Cards */
 #rep-info {
   text-align: left;
+  width: 100%;
+  max-width: 600px;
+  margin-top: 20px;
 }
 
 .rep-card {
-  margin: 15px 0;
-  padding: 15px;
+  background: var(--card-bg);
   border: 1px solid var(--border-color);
-  border-radius: 8px;
-  background: var(--card-background);
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-  line-height: 1.8; /* Increase line height for better spacing */
+  border-radius: 10px;
+  padding: 20px;
+  margin: 15px 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  line-height: 1.6;
 }
 
 .rep-card div {
-  margin-bottom: 10px; /* Add spacing between each item */
+  margin-bottom: 10px;
 }
 
 .rep-card div span:first-child {
-  font-weight: bold;
+  font-weight: 600;
   margin-right: 5px;
 }
 
 .rep-card div a {
-  color: var(--link-color);
+  color: var(--accent-color);
   text-decoration: none;
 }
 
@@ -181,69 +188,114 @@ select option[value=""] {
   text-decoration: underline;
 }
 
-/* Footer */
-footer {
-  margin-top: 20px;
-  background: var(--secondary-color);
-  color: white;
-  padding: 10px;
-  font-size: 14px;
+/* ========================= */
+/*        IMAGE SECTION      */
+/* ========================= */
+
+.image-container {
+  margin: 40px auto 0;
   text-align: center;
+  max-width: 90%;
 }
 
-/* Responsive Design */
+.responsive-image {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.responsive-image:hover {
+  transform: translateY(-5px);
+}
+
+/* ========================= */
+/*          FOOTER           */
+/* ========================= */
+
+footer {
+  margin-top: 50px;
+  padding: 20px;
+  background: #fafafa;
+  color: var(--text-muted);
+  font-size: 14px;
+  border-top: 1px solid var(--border-color);
+}
+
+/* ========================= */
+/*        RESPONSIVE         */
+/* ========================= */
+
 @media (max-width: 768px) {
-  header h1 {
+  .logo {
+    max-width: 200px;
+  }
+
+  .hero-title {
     font-size: 20px;
+    text-align: center;
   }
 
-  main {
-    padding: 15px;
-  }
-
-  select {
-    font-size: 16px; /* Slightly smaller for small screens */
-    padding: 12px 15px;
+  .hero-subtitle {
+    font-size: 16px;
+    padding: 6px 12px;
   }
 
   main h2 {
-  font-size: 22px; /* Modern font size */
-  font-weight: bold; /* Emphasize the title */
-  color: #003399; /* Use a deeper blue for consistency */
-  text-transform: uppercase; /* Capitalize for emphasis */
-  letter-spacing: 0.8px; /* Subtle spacing for a clean look */
-  margin-bottom: 15px; /* Add space below the title */
-  text-align: center;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-}
+    font-size: 18px;
+  }
+
+  select {
+    font-size: 16px;
   }
 
   .rep-card {
-    padding: 10px;
+    padding: 15px;
+  }
+
+  .hero-row {
+    flex-direction: column;
+    gap: 10px;
   }
 }
-/* Image Container Styling */
-.image-container {
-  margin: 20px auto; /* Center the container */
-  text-align: center; /* Center-align the content */
-  max-width: 90%; /* Restrict container width */
-  padding: 15px; /* Add spacing around the image */
+
+/* ========================= */
+/*         Q&A Section       */
+/* ========================= */
+
+.qa-section {
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
 }
 
-/* Image Styling */
-.responsive-image {
-  width: 100%; /* Scale the image to fit the container */
-  max-width: 300px; /* Restrict the maximum width */
-  height: auto; /* Maintain aspect ratio */
-  display: block; /* Ensure no inline spacing issues */
-  margin: 0 auto; /* Center-align the image */
-  border-radius: 8px; /* Rounded corners for the image */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for the image */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+.qa-section h2 {
+  font-size: 26px;
+  color: var(--highlight-color);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 30px;
+  text-align: center;
 }
 
-/* Hover Effect for Image */
-.responsive-image:hover {
-  transform: translateY(-5px); /* Slight upward lift on hover */
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+.qa-item {
+  margin-bottom: 25px;
+  border-left: 4px solid var(--highlight-color);
+  padding-left: 15px;
+}
+
+.qa-item h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #003366;
+}
+
+.qa-item p {
+  font-size: 16px;
+  color: #444;
+  line-height: 1.6;
 }
