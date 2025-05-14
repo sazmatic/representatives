@@ -8,15 +8,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <h1>Find Your Campus Representative</h1>
+ <header class="hero">
+  <img src="logo.png" alt="Teamsters Logo" class="logo">
+  <div class="hero-text">
+    <h1 class="hero-title">Find Your Campus Steward</h1>
+  </div>
   </header>
 
   <main>
-    <!-- Dropdown Title -->
     <h2>Select Your Campus</h2>
 
-    <!-- Dropdown Menu -->
     <div class="dropdown-wrapper">
       <select id="campus-select" aria-label="Campus Selector">
         <option value="" disabled selected>--Select Campus--</option>
@@ -32,19 +33,61 @@
       </select>
     </div>
 
-    <!-- Dynamic Campus Name -->
     <h2 id="campus-name" style="display: none;"></h2>
 
-    <!-- Representative Information -->
     <div id="rep-info" style="display: none;">
       <div id="rep-name"></div>
     </div>
-  </main>
-<!-- PNG Image -->
-  <div class="image-container">
-    <img src="https://i.ibb.co/86vS2p4/weingarten-rights-english-1.png" alt="Weingarten Rights" class="responsive-image">
+<section class="qa-section">
+  <h2>Frequently Asked Questions</h2>
+
+  <div class="qa-item">
+    <h3>What are my Weingarten Rights?</h3>
+    <p><p>
+  You have the right to union representation during any meeting that could lead to discipline. If you’re called into a meeting with management and believe it might result in discipline or affect your working conditions, you must clearly state:
+</p>
+
+<p><em>“If this meeting could lead to discipline or affect my employment, I request my union steward be present.”</em></p>
+
+<p>
+  Management is not required to inform you of this right — you must invoke it. Once you do, they must either:
+</p>
+
+<ul>
+  <li>Stop the meeting until your steward arrives</li>
+  <li>End the meeting</li>
+  <li>Give you the choice to continue without representation (not recommended)</li>
+</ul>
+
+<p>
+  Never attend a disciplinary meeting alone — always ask for your steward.
+</p></p>
   </div>
-</main>
+
+  <div class="qa-item">
+    <h3>How do I contact my steward?</h3>
+    <p>Just select your campus from the dropdown menu above. Your stewards' emails will appear instantly.</p>
+  </div>
+
+  <div class="qa-item">
+    <h3>Is everything I tell my steward confidential?</h3>
+    <p>Yes. Union stewards are trained to keep your information confidential and will not share anything without your permission unless you’re at immediate risk.</p>
+  </div>
+
+  <div class="qa-item">
+    <h3>What if my manager says I don’t need a steward?</h3>
+    <p>It’s not their decision. If you ask for a steward, they are required by law to pause the meeting until one is present. Don’t let them pressure you into proceeding alone.</p>
+  </div>
+    <div class="qa-item">
+    <h3>What if no steward is available right away?</h3>
+    <p>Politely state that you are invoking your Weingarten Rights and cannot proceed without union representation. Contact union leadership so they can assign a backup steward if needed.</p>
+  </div>
+    <div class="qa-item">
+    <h3>Can I become a steward or get more involved?</h3>
+    <p>Absolutely. We’re always looking for more advocates. Talk to your current steward or a committee lead about how to get started.</p>
+  </div>
+</section>
+
   <footer>
     <p>&copy; 2025 Teamsters Local 2024. All rights reserved</p>
   </footer>
