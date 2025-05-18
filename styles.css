@@ -277,7 +277,7 @@ footer {
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 30px;
-  text-align: center;
+  text-align: left;
   white-space: nowrap;            /* Force one line */
   overflow: hidden;
   text-overflow: ellipsis;
