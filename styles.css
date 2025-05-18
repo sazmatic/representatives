@@ -269,7 +269,7 @@ footer {
   padding: 40px 20px;
   max-width: 800px;
   margin: 0 auto;
-  text-align: left;
+  text-align: initial;
 }
 .qa-section > h2 {
   font-size: clamp(16px, 4vw, 26px); /* Responsive size that scales down */
