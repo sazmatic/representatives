@@ -63,6 +63,24 @@ function handleCampusChange() {
         </div>
       `)
       .join('');
+      const leadershipDropdown = document.getElementById('leadership-dropdown');
+if (leadershipDropdown) {
+  const leadershipReps = Object.values(representatives)
+    .flat()
+    .filter(rep => rep.leader);
+
+  leadershipReps.forEach(rep => {
+    const option = document.createElement('option');
+    option.value = rep.email;
+    option.textContent = `${rep.name} ${rep.title ? `(${rep.title})` : ''}`;
+    leadershipDropdown.appendChild(option);
+  });
+
+  leadershipDropdown.addEventListener('change', function () {
+    const email = this.value;
+    if (email) window.location.href = `mailto:${email}`;
+  });
+}
   } else {
     campusName.style.display = 'none';
     repInfo.style.display = 'none';
