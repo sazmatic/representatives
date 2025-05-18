@@ -302,4 +302,28 @@ footer {
   line-height: 1.6;
 }
 
+.escalation-dropdown {
+  max-width: 400px;
+  margin: 40px auto 0;
+}
 
+.dropdown-label {
+  display: block;
+  font-weight: 600;
+  color: var(--highlight-color);
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+#leadership-dropdown {
+  width: 100%;
+  padding: 15px 20px;
+  font-size: 18px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: #fff;
+  color: var(--primary-color);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  text-align-last: center;
+}
