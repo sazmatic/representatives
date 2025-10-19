@@ -12,12 +12,22 @@
 /*        GLOBAL STYLES      */
 /* ========================= */
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  padding-top: 0;
+}
+
 body {
   font-family: 'Roboto', sans-serif;
   background: var(--background-color);
   color: var(--primary-color);
-  margin: 0;
-  padding: 0;
   text-align: center;
 }
 
@@ -27,12 +37,13 @@ body {
 
 .hero {
   background: #fff;
-  padding: 30px 20px 25px;
+  padding: 10px 20px; /* fixed */
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   border-bottom: 1px solid #ddd;
+  position: relative; /* allows absolute-positioned link pills */
 }
 
 /* Horizontal layout for logo + title */
@@ -42,18 +53,23 @@ body {
   justify-content: center;
   gap: 20px;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 /* Bigger logo */
 .logo {
-  max-width: 250px;
+  max-width: 300px;
+  padding: 0;
+  width: 100%;
   height: auto;
+  margin: 0 auto;
+  display: block;
 }
 
 .hero-title {
   font-size: 28px;
   font-weight: 700;
-  color: var(--highlight-color); /* Navy Blue */
+  color: var(--highlight-color);
   text-transform: uppercase;
   letter-spacing: 1.2px;
   margin: 0;
@@ -63,23 +79,39 @@ body {
   background-color: #f0f4f9;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
-  white-space: nowrap;       /* ✅ keeps it on one line */
-  overflow-x: auto;          /* ✅ lets it scroll if needed */
-}
+  white-space: nowrap;
+  overflow-x: auto;
 }
 
-/* Subtitle below */
-.hero-subtitle {
-  font-size: 18px;
-  color: var(--text-muted);
-  font-weight: 500;
-  margin-top: 15px;
-  padding: 6px 14px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  background-color: #f9f9f9;
+/* Subtle top-right “button” links */
+.hero-links {
+  position: absolute;
+  top: 10px;
+  right: 16px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  z-index: 10;
+}
+
+.hero-link-btn {
   display: inline-block;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  padding: 6px 10px;
+  font-size: 13.5px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 999px;          /* pill shape */
+  background-color: #f6f8fb;     /* soft, non-intrusive */
+  color: var(--highlight-color); /* navy text */
+  border: 1px solid #d6dde6;     /* hairline border */
+  transition: background-color .2s ease, color .2s ease, border-color .2s ease, transform .15s ease;
+}
+
+.hero-link-btn:hover {
+  background-color: var(--highlight-color);
+  color: #fff;
+  border-color: var(--highlight-color);
+  transform: translateY(-1px);
 }
 
 /* ========================= */
@@ -99,14 +131,14 @@ main h2 {
   color: var(--highlight-color);
   text-transform: uppercase;
   letter-spacing: 0.8px;
-  margin-bottom: 20px;
+  margin-bottom: 8px;
 }
 
 /* Dropdown */
 .dropdown-wrapper {
   width: 100%;
   max-width: 400px;
-  margin: 20px auto;
+  margin: 8px auto;
 }
 
 select {
@@ -128,13 +160,8 @@ select:focus {
   box-shadow: 0 0 6px rgba(0, 123, 255, 0.3);
 }
 
-select option[value=""] {
-  display: none;
-}
-
-select:invalid {
-  color: #aaa;
-}
+select option[value=""] { display: none; }
+select:invalid { color: #aaa; }
 
 select option {
   text-align: center;
@@ -146,11 +173,18 @@ select option {
 /* ========================= */
 
 #campus-name {
-  font-size: 24px;
-  font-weight: 600;
-  color: var(--primary-color);
-  margin-top: 30px;
-  text-transform: capitalize;
+  font-size: 20px;
+  font-weight: 700;
+  color: #003366;
+  padding: 8px 20px;
+  border-radius: 12px;
+  background: linear-gradient(to right, #f5f7fa, #e8edf3);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  display: inline-block;
+  text-align: center;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
 }
 
 #rep-info {
@@ -161,32 +195,146 @@ select option {
 }
 
 .rep-card {
-  background: var(--card-bg);
-  border: 1px solid var(--border-color);
+  margin: 20px auto;
+  padding: 18px 20px 20px;
+  border: 1px solid var(--border-color, #ddd);
   border-radius: 10px;
-  padding: 20px;
-  margin: 15px 0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  line-height: 1.6;
+  background: var(--card-background, #fff);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  max-width: 300px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
 }
 
-.rep-card div {
+.rep-name {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  text-align: center;
+  width: 100%;
+}
+
+.rep-title {
+  font-size: 14px;
+  color: #555;
   margin-bottom: 10px;
+  text-align: center;
+  width: 100%;
 }
 
-.rep-card div span:first-child {
-  font-weight: 600;
-  margin-right: 5px;
+.rep-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 8px;
+  width: 100%;
+  margin-top: 12px;
+  padding: 0 8px;
+  box-sizing: border-box;
 }
 
-.rep-card div a {
-  color: var(--accent-color);
+.rep-buttons a {
+  flex: 1;
+  min-width: 0;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 14px;
+}
+
+.rep-buttons:has(.email-button):not(:has(.phone-button, .text-button)) {
+  justify-content: center;
+}
+
+.rep-buttons:has(.email-button):not(:has(.phone-button, .text-button)) .email-button {
+  width: auto;
+  min-width: 100px;
+}
+
+/* BUTTONS */
+.phone-button,
+.email-button,
+.text-button {
+  padding: 8px 14px;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
   text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
 }
 
-.rep-card div a:hover {
-  text-decoration: underline;
+.phone-button { background-color: #28a745; }
+.phone-button:hover { background-color: #218838; }
+
+.text-button { background-color: #17a2b8; }
+.text-button:hover { background-color: #117a8b; }
+
+.email-button { background-color: #007bff; }
+.email-button:hover { background-color: #0056b3; }
+
+/* BADGES */
+.unit-badge-wrapper {
+  position: absolute;
+  top: 4px;
+  left: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  z-index: 2;
 }
+
+.unit-badge {
+  background-color: #e9f0fb;
+  color: #003366;
+  font-size: 12px;
+  padding: 5px 10px;
+  border-radius: 16px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.unit-np { background-color: #e6fff1; color: #006644; }
+.unit-rn { background-color: #e9f0fb; color: #003366; }
+
+.rep-site {
+  background-color: #eef2f7;
+  color: #003366;
+  font-size: 10px;
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-weight: 500;
+  display: inline-block;
+  margin-top: 4px;
+  line-height: 1;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+/* SHIFT ICON */
+.shift-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-color: #f5f7fa;
+  color: #003366;
+  font-size: 13px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 500;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.shift-badge .icon { font-size: 14px; }
 
 /* ========================= */
 /*        IMAGE SECTION      */
@@ -207,9 +355,7 @@ select option {
   transition: transform 0.3s ease;
 }
 
-.responsive-image:hover {
-  transform: translateY(-5px);
-}
+.responsive-image:hover { transform: translateY(-5px); }
 
 /* ========================= */
 /*          FOOTER           */
@@ -224,41 +370,24 @@ footer {
   border-top: 1px solid var(--border-color);
 }
 
-/* ========================= */
-/*        RESPONSIVE         */
-/* ========================= */
-
-@media (max-width: 768px) {
-  .logo {
-    max-width: 200px;
-  }
-
-  .hero-title {
-    font-size: 20px;
-    text-align: center;
-  }
-
-  .hero-subtitle {
-    font-size: 16px;
-    padding: 6px 12px;
-  }
-
-  main h2 {
-    font-size: 18px;
-  }
-
-  select {
-    font-size: 16px;
-  }
-
-  .rep-card {
-    padding: 15px;
-  }
-
-  .hero-row {
-    flex-direction: column;
-    gap: 10px;
-  }
+.footer-website-button {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 12px 26px;
+  background-color: var(--accent-color);
+  color: #fff !important;
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 8px;
+  border: none;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+  transition: all 0.25s ease;
+}
+.footer-website-button:hover {
+  background-color: var(--highlight-color);
+  transform: translateY(-2px);
 }
 
 /* ========================= */
@@ -269,18 +398,76 @@ footer {
   padding: 40px 20px;
   max-width: 800px;
   margin: 0 auto;
-  text-align: initial;
+  text-align: center;
 }
-.qa-section > h2 {
-  font-size: clamp(16px, 4vw, 26px); /* Responsive size that scales down */
-  color: var(--highlight-color);
+.qa-section h2 {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 800;
   text-transform: uppercase;
+  background-color: #e8f0fc;
+  color: #003366;
+  padding: 12px 20px;
+  border-radius: 12px;
+  display: inline-block;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
   letter-spacing: 1px;
-  margin-bottom: 30px;
-  text-align: left; !important;
-  white-space: nowrap;            /* Force one line */
-  overflow: hidden;
-  text-overflow: ellipsis;
+  margin: 0 auto 30px;
+}
+
+.campus-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  max-width: 600px;
+  width: 100%;
+}
+
+.campus-header h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--primary-color);
+  text-transform: capitalize;
+}
+
+.badge-key-inline {
+  background-color: #f9f9f9;
+  border-radius: 6px;
+  padding: 4px 7px;
+  font-size: 11px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+  min-width: 50px;
+  margin-left: 10px;
+  margin-top: 8px;
+}
+
+.badge-key-inline div {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: 12px;
+}
+
+.badge-icon { font-size: 16px; }
+.badge-label { font-weight: 500; font-size: 12px; }
+.badge-key-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: #003366;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+  display: block;
+  opacity: 0.85;
 }
 
 .qa-item {
@@ -288,42 +475,76 @@ footer {
   border-left: 4px solid var(--highlight-color);
   padding-left: 15px;
 }
-
 .qa-item h3 {
   font-size: 20px;
   font-weight: 600;
   margin-bottom: 8px;
   color: #003366;
 }
-
 .qa-item p {
   font-size: 16px;
   color: #444;
   line-height: 1.6;
 }
-
-.escalation-dropdown {
-  max-width: 400px;
-  margin: 40px auto 0;
-}
-
-.dropdown-label {
-  display: block;
+.ulp-link {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 8px 16px;
+  background-color: #007BFF;
+  color: #fff !important;
+  font-size: 14px;
   font-weight: 600;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+.ulp-link:hover { background-color: #0056b3; }
+
+.escalation-section { margin-top: 10px; text-align: center; }
+.escalation-section h2 {
+  font-size: 20px;
+  font-weight: 700;
   color: var(--highlight-color);
-  margin-bottom: 8px;
-  text-align: center;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-#leadership-dropdown {
+.highlight-blue { color: #007BFF; font-weight: 600; }
+
+.campus-header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
-  padding: 15px 20px;
-  font-size: 18px;
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
-  background-color: #fff;
-  color: var(--primary-color);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.campus-title-centered {
   text-align: center;
-  text-align-last: center;
+  flex-grow: 1;
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin: 0;
+  padding-right: 12px;
+}
+
+/* ========================= */
+/*        RESPONSIVE         */
+/* ========================= */
+
+@media (max-width: 480px) {
+  .logo { max-width: 300px; }
+  .hero-title { font-size: 20px; text-align: center; }
+  .hero-subtitle { font-size: 16px; padding: 6px 12px; }
+  main h2 { font-size: 18px; }
+  select { font-size: 16px; }
+  .rep-card { padding: 15px; }
+  .hero-row { flex-direction: column; gap: 10px; }
+
+  /* tuck pills slightly inward on small screens */
+  .hero-links { top: 8px; right: 12px; gap: 6px; }
+  .hero-link-btn { padding: 6px 10px; font-size: 13px; }
 }
