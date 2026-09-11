@@ -50,10 +50,22 @@ const representatives = {
   ]
 };
 
-/* Union leadership for the escalation menu.
-   Example: { name: "Jane Doe", title: "Business Agent", email: "jane@local2024.org" }
-   The escalation control stays hidden while this list is empty. */
-const LEADERSHIP = [];
+/* Union leadership, split into the two escalation menus.
+   Names below are taken from the live site; their contact details are NOT in
+   this repo yet, so fill in an email (and optional phone) for each one.
+   A person with no email is listed but not selectable, and a group with no
+   reachable people stays hidden entirely. */
+const LEADERSHIP = {
+  urgent: [
+    { name: "Dave Hughes", title: "", email: "" },
+    { name: "Sarah Johnson", title: "", email: "" },
+    { name: "Jason Fratangelo", title: "", email: "" },
+    { name: "Dave Trigona", title: "", email: "" }
+  ],
+  nonUrgent: [
+    // Add the people from the "For Non-Urgent Matters" menu here.
+  ]
+};
 
 /* Script members read aloud when they invoke their Weingarten Rights. */
 const WEINGARTEN_SCRIPT =
@@ -203,31 +215,23 @@ function repCard(rep, { showCampus = false } = {}) {
       ${showCampus ? `<span class="rep-site">${escapeHtml(rep.campus)}</span>` : ""}
     </div>`;
 
-  // Contact details are never printed as text — each route is a button, split
-  // into an urgent column (call/text) and a non-urgent column (email).
+  // Contact details are never printed as text — each route is a button.
   return `
     <article class="rep-card" tabindex="-1">
       ${badges}
       <h3 class="rep-name">${name}</h3>
       <p class="rep-title">Campus Steward</p>
 
-      <div class="rep-contact-cols">
-        <div class="contact-col contact-col-urgent">
-          <span class="contact-col-label">Urgent</span>
-          <a class="phone-button" href="tel:${tel}" aria-label="Call ${name} — urgent">
-            <svg class="ico" aria-hidden="true"><use href="#i-phone"></use></svg>Call
-          </a>
-          <a class="text-button" href="sms:${tel}" aria-label="Text ${name} — urgent">
-            <svg class="ico" aria-hidden="true"><use href="#i-chat"></use></svg>Text
-          </a>
-        </div>
-
-        <div class="contact-col contact-col-routine">
-          <span class="contact-col-label">Non-Urgent</span>
-          <a class="email-button" href="mailto:${email}" aria-label="Email ${name} — non-urgent">
-            <svg class="ico" aria-hidden="true"><use href="#i-mail"></use></svg>Email
-          </a>
-        </div>
+      <div class="rep-buttons">
+        <a class="phone-button" href="tel:${tel}" aria-label="Call ${name}">
+          <svg class="ico" aria-hidden="true"><use href="#i-phone"></use></svg>Call
+        </a>
+        <a class="text-button" href="sms:${tel}" aria-label="Text ${name}">
+          <svg class="ico" aria-hidden="true"><use href="#i-chat"></use></svg>Text
+        </a>
+        <a class="email-button" href="mailto:${email}" aria-label="Email ${name}">
+          <svg class="ico" aria-hidden="true"><use href="#i-mail"></use></svg>Email
+        </a>
       </div>
     </article>`;
 }
@@ -409,26 +413,41 @@ function initAccordion() {
 /* ---------- ESCALATION ---------- */
 
 function initEscalation() {
-  const wrapper = $(".escalation-dropdown");
-  const dropdown = $("#leadership-dropdown");
-  if (!wrapper || !dropdown) return;
+  const section = $(".escalation-section");
+  let anyVisible = false;
 
-  // Hide the control entirely rather than showing an empty menu.
-  if (LEADERSHIP.length === 0) {
-    wrapper.hidden = true;
-    return;
-  }
+  [
+    { id: "leadership-urgent", people: LEADERSHIP.urgent },
+    { id: "leadership-non-urgent", people: LEADERSHIP.nonUrgent }
+  ].forEach(({ id, people }) => {
+    const dropdown = document.getElementById(id);
+    if (!dropdown) return;
+    const wrapper = dropdown.closest(".escalation-dropdown");
 
-  LEADERSHIP.forEach((leader) => {
-    const option = document.createElement("option");
-    option.value = leader.email;
-    option.textContent = leader.title ? `${leader.name} (${leader.title})` : leader.name;
-    dropdown.appendChild(option);
+    // A menu nobody can actually be reached through is worse than no menu.
+    const reachable = people.filter((person) => person.email);
+    if (reachable.length === 0) {
+      if (wrapper) wrapper.hidden = true;
+      return;
+    }
+
+    anyVisible = true;
+    if (wrapper) wrapper.hidden = false;
+
+    people.forEach((person) => {
+      const option = document.createElement("option");
+      option.value = person.email;
+      option.textContent = person.title ? `${person.name} (${person.title})` : person.name;
+      option.disabled = !person.email;
+      dropdown.appendChild(option);
+    });
+
+    dropdown.addEventListener("change", function () {
+      if (this.value) window.location.href = `mailto:${this.value}`;
+    });
   });
 
-  dropdown.addEventListener("change", function () {
-    if (this.value) window.location.href = `mailto:${this.value}`;
-  });
+  if (section) section.hidden = !anyVisible;
 }
 
 /* ---------- THEME ---------- */

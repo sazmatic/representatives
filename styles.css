@@ -605,59 +605,18 @@ select option { text-align: center; color: var(--text); background: var(--surfac
   letter-spacing: .6px;
 }
 
-/* Two contact columns: urgent (call/text) and non-urgent (email).
-   Contact details are never rendered as text, only as these buttons. */
-.rep-contact-cols {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
+.rep-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
   width: 100%;
-  margin-top: 14px;
+  margin-top: 16px;
   padding-top: 14px;
   border-top: 1px solid var(--border);
 }
 
-.contact-col {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  min-width: 0;
-  justify-content: flex-start;
-}
-
-/* Hairline rule between the two columns. */
-.contact-col-urgent { position: relative; }
-.contact-col-urgent::after {
-  content: "";
-  position: absolute;
-  top: 6px;
-  bottom: 0;
-  right: -7px;
-  width: 1px;
-  background: var(--border);
-}
-
-.contact-col-label {
-  font-size: 11px;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: .8px;
-  color: var(--text-muted);
-  margin-bottom: 2px;
-  white-space: nowrap;
-}
-
-.contact-col-urgent .contact-col-label { color: var(--urgent); }
-
-.contact-col-urgent .contact-col-label::before {
-  content: "";
-  display: inline-block;
-  width: 7px; height: 7px;
-  margin-right: 5px;
-  border-radius: 50%;
-  background: var(--urgent);
-  vertical-align: middle;
-}
+.rep-buttons a { flex: 1; min-width: 0; padding: 10px 0; font-size: 14px; }
 
 .just-copied {
   background: var(--green) !important;
@@ -672,7 +631,6 @@ select option { text-align: center; color: var(--text); background: var(--surfac
   align-items: center;
   justify-content: center;
   gap: 5px;
-  width: 100%;
   padding: 10px 12px;
   font-size: 14px;
   border: none;
@@ -976,10 +934,11 @@ select option { text-align: center; color: var(--text); background: var(--surfac
   line-height: 1.65;
 }
 
-.escalation-dropdown { margin-top: 30px; }
+.escalation-dropdown { margin-top: 14px; }
 .escalation-dropdown[hidden] { display: none; }
+.escalation-section[hidden] { display: none; }
 
-.escalation-section { margin-top: 10px; text-align: center; }
+.escalation-section { margin-top: 34px; text-align: center; }
 .escalation-section h2 {
   font-size: 20px;
   font-weight: 700;

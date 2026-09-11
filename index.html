@@ -173,12 +173,21 @@
         </div></div>
       </div>
 
-      <div class="dropdown-wrapper escalation-dropdown">
-        <label for="leadership-dropdown" class="dropdown-label">Need more help? Escalate to union leadership</label>
-        <select id="leadership-dropdown">
-          <option disabled selected>Select a union leader to contact</option>
-        </select>
-      </div>
+      <section class="escalation-section" hidden>
+        <h2>Need more help? Escalate to union leadership</h2>
+
+        <div class="dropdown-wrapper escalation-dropdown" hidden>
+          <select id="leadership-urgent" aria-label="Contact union leadership about an urgent matter">
+            <option disabled selected>-- For Urgent Matters --</option>
+          </select>
+        </div>
+
+        <div class="dropdown-wrapper escalation-dropdown" hidden>
+          <select id="leadership-non-urgent" aria-label="Contact union leadership about a non-urgent matter">
+            <option disabled selected>-- For Non-Urgent Matters --</option>
+          </select>
+        </div>
+      </section>
     </section>
   </main>
 
