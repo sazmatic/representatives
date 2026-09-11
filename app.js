@@ -50,22 +50,26 @@ const representatives = {
   ]
 };
 
-/* Union leadership, split into the two escalation menus.
-   Names below are taken from the live site; their contact details are NOT in
-   this repo yet, so fill in an email (and optional phone) for each one.
-   A person with no email is listed but not selectable, and a group with no
-   reachable people stays hidden entirely. */
-const LEADERSHIP = {
-  urgent: [
-    { name: "Dave Hughes", title: "", email: "" },
-    { name: "Sarah Johnson", title: "", email: "" },
-    { name: "Jason Fratangelo", title: "", email: "" },
-    { name: "Dave Trigona", title: "", email: "" }
-  ],
-  nonUrgent: [
-    // Add the people from the "For Non-Urgent Matters" menu here.
-  ]
-};
+/* Escalation contacts, urgent menu.
+   These four are the urgent contacts. Sarah Johnson resolves to the Royal Oak
+   steward entry above; the other three are not in this repo, so each needs an
+   email filled in before they become selectable. */
+const LEADERSHIP_URGENT = [
+  { name: "Dave Hughes", title: "", email: "" },
+  { name: "Sarah Johnson", title: "", email: "sarah.johnson7170@gmail.com" },
+  { name: "Jason Fratangelo", title: "", email: "" },
+  { name: "Dave Trigona", title: "", email: "" }
+];
+
+/* The non-urgent menu is everyone else — every campus steward who is not
+   already an urgent contact. Built from `representatives`, so it stays
+   correct as stewards are added or removed. */
+function nonUrgentContacts() {
+  const urgentNames = new Set(LEADERSHIP_URGENT.map((p) => p.name.toLowerCase()));
+  return allStewards
+    .filter((rep) => !urgentNames.has(rep.name.toLowerCase()))
+    .map((rep) => ({ name: rep.name, title: rep.campus, email: rep.email }));
+}
 
 /* Script members read aloud when they invoke their Weingarten Rights. */
 const WEINGARTEN_SCRIPT =
@@ -417,16 +421,15 @@ function initEscalation() {
   let anyVisible = false;
 
   [
-    { id: "leadership-urgent", people: LEADERSHIP.urgent },
-    { id: "leadership-non-urgent", people: LEADERSHIP.nonUrgent }
+    { id: "leadership-urgent", people: LEADERSHIP_URGENT },
+    { id: "leadership-non-urgent", people: nonUrgentContacts() }
   ].forEach(({ id, people }) => {
     const dropdown = document.getElementById(id);
     if (!dropdown) return;
     const wrapper = dropdown.closest(".escalation-dropdown");
 
     // A menu nobody can actually be reached through is worse than no menu.
-    const reachable = people.filter((person) => person.email);
-    if (reachable.length === 0) {
+    if (!people.some((person) => person.email)) {
       if (wrapper) wrapper.hidden = true;
       return;
     }
@@ -437,7 +440,7 @@ function initEscalation() {
     people.forEach((person) => {
       const option = document.createElement("option");
       option.value = person.email;
-      option.textContent = person.title ? `${person.name} (${person.title})` : person.name;
+      option.textContent = person.title ? `${person.name} \u2014 ${person.title}` : person.name;
       option.disabled = !person.email;
       dropdown.appendChild(option);
     });
