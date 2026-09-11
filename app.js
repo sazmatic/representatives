@@ -196,7 +196,6 @@ function repCard(rep, { showCampus = false } = {}) {
   const tel = digitsOnly(rep.phone);
   const name = escapeHtml(rep.name);
   const email = escapeHtml(rep.email);
-  const phone = escapeHtml(rep.phone);
 
   const badges = `
     <div class="unit-badge-wrapper">
@@ -204,35 +203,31 @@ function repCard(rep, { showCampus = false } = {}) {
       ${showCampus ? `<span class="rep-site">${escapeHtml(rep.campus)}</span>` : ""}
     </div>`;
 
+  // Contact details are never printed as text — each route is a button, split
+  // into an urgent column (call/text) and a non-urgent column (email).
   return `
     <article class="rep-card" tabindex="-1">
       ${badges}
       <h3 class="rep-name">${name}</h3>
       <p class="rep-title">Campus Steward</p>
 
-      <div class="rep-contact">
-        <a class="rep-contact-line" href="tel:${tel}">
-          <svg class="ico" aria-hidden="true"><use href="#i-phone"></use></svg>${phone}
-        </a>
-        <button type="button" class="rep-contact-line as-button" data-copy="${email}"
-                data-copy-label="${name}&rsquo;s email copied" title="Copy email address">
-          <svg class="ico" aria-hidden="true"><use href="#i-mail"></use></svg>
-          <span class="rep-email-text">${email}</span>
-          <svg class="ico ico-copy" aria-hidden="true"><use href="#i-copy"></use></svg>
-          <span class="sr-only">Copy email address for ${name}</span>
-        </button>
-      </div>
+      <div class="rep-contact-cols">
+        <div class="contact-col contact-col-urgent">
+          <span class="contact-col-label">Urgent</span>
+          <a class="phone-button" href="tel:${tel}" aria-label="Call ${name} — urgent">
+            <svg class="ico" aria-hidden="true"><use href="#i-phone"></use></svg>Call
+          </a>
+          <a class="text-button" href="sms:${tel}" aria-label="Text ${name} — urgent">
+            <svg class="ico" aria-hidden="true"><use href="#i-chat"></use></svg>Text
+          </a>
+        </div>
 
-      <div class="rep-buttons">
-        <a class="phone-button" href="tel:${tel}" aria-label="Call ${name}">
-          <svg class="ico" aria-hidden="true"><use href="#i-phone"></use></svg>Call
-        </a>
-        <a class="text-button" href="sms:${tel}" aria-label="Text ${name}">
-          <svg class="ico" aria-hidden="true"><use href="#i-chat"></use></svg>Text
-        </a>
-        <a class="email-button" href="mailto:${email}" aria-label="Email ${name}">
-          <svg class="ico" aria-hidden="true"><use href="#i-mail"></use></svg>Email
-        </a>
+        <div class="contact-col contact-col-routine">
+          <span class="contact-col-label">Non-Urgent</span>
+          <a class="email-button" href="mailto:${email}" aria-label="Email ${name} — non-urgent">
+            <svg class="ico" aria-hidden="true"><use href="#i-mail"></use></svg>Email
+          </a>
+        </div>
       </div>
     </article>`;
 }

@@ -15,6 +15,7 @@
   --green-hover: #218838;
   --teal: #17a2b8;
   --teal-hover: #117a8b;
+  --urgent: #c0392b;
 
   --bg: #ffffff;
   --bg-alt: #f5f7fa;
@@ -46,6 +47,7 @@
   --green-hover: #4ad06e;
   --teal: #2bc0d6;
   --teal-hover: #4ed4e7;
+  --urgent: #ff7a6b;
 
   --bg: #0f141b;
   --bg-alt: #141b24;
@@ -603,84 +605,74 @@ select option { text-align: center; color: var(--text); background: var(--surfac
   letter-spacing: .6px;
 }
 
-.rep-contact {
+/* Two contact columns: urgent (call/text) and non-urgent (email).
+   Contact details are never rendered as text, only as these buttons. */
+.rep-contact-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  width: 100%;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+
+.contact-col {
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  width: 100%;
-  margin-bottom: 4px;
-}
-
-.rep-contact-line {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   gap: 8px;
-  width: 100%;
-  padding: 7px 10px;
-  font-size: 14px;
-  font-family: inherit;
+  min-width: 0;
+  justify-content: flex-start;
+}
+
+/* Hairline rule between the two columns. */
+.contact-col-urgent { position: relative; }
+.contact-col-urgent::after {
+  content: "";
+  position: absolute;
+  top: 6px;
+  bottom: 0;
+  right: -7px;
+  width: 1px;
+  background: var(--border);
+}
+
+.contact-col-label {
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .8px;
   color: var(--text-muted);
-  background: transparent;
-  border: none;
-  border-radius: 8px;
-  text-decoration: none;
-  cursor: pointer;
-  transition: background-color .2s ease, color .2s ease;
-}
-.rep-contact-line:hover { background: var(--surface-2); color: var(--accent); }
-
-.rep-email-text {
-  overflow: hidden;
-  text-overflow: ellipsis;
+  margin-bottom: 2px;
   white-space: nowrap;
-  max-width: 190px;
 }
 
-.ico-copy { opacity: .45; font-size: 13px; }
-.rep-contact-line:hover .ico-copy { opacity: 1; }
+.contact-col-urgent .contact-col-label { color: var(--urgent); }
+
+.contact-col-urgent .contact-col-label::before {
+  content: "";
+  display: inline-block;
+  width: 7px; height: 7px;
+  margin-right: 5px;
+  border-radius: 50%;
+  background: var(--urgent);
+  vertical-align: middle;
+}
 
 .just-copied {
   background: var(--green) !important;
   color: #fff !important;
-}
-.just-copied .ico-copy { opacity: 1; }
-
-.rep-buttons {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: nowrap;
-  gap: 8px;
-  width: 100%;
-  margin-top: 12px;
-  box-sizing: border-box;
-}
-
-.rep-buttons a {
-  flex: 1;
-  min-width: 0;
-  text-align: center;
-  padding: 10px 0;
-  font-size: 14px;
-}
-
-.rep-buttons:has(.email-button):not(:has(.phone-button, .text-button)) {
-  justify-content: center;
-}
-.rep-buttons:has(.email-button):not(:has(.phone-button, .text-button)) .email-button {
-  width: auto;
-  min-width: 100px;
 }
 
 /* BUTTONS */
 .phone-button,
 .email-button,
 .text-button {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   gap: 5px;
+  width: 100%;
   padding: 10px 12px;
   font-size: 14px;
   border: none;
